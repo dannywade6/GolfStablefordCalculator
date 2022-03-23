@@ -13,9 +13,9 @@ struct ScoreCalculatorView: View {
     @State private var pickerBind = 11
     let strokeIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
-    @State private var gamesAmount = ["3", "4", "5"]
-    @State private var game: Int = 1
-    @State private var number = 1
+    @State private var holeParNumber = ["3", "4", "5"]
+    @State private var par: Int = 1
+    @State private var strokes = 1
 
     var body: some View {
 
@@ -45,9 +45,9 @@ struct ScoreCalculatorView: View {
                     Text("Par")
                         .bold()
 
-                    Picker("Par",selection: $game) {
-                        ForEach(0..<gamesAmount.count) {
-                            Text(gamesAmount[$0])
+                    Picker("Par",selection: $par) {
+                        ForEach(0..<holeParNumber.count) {
+                            Text(holeParNumber[$0])
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -81,7 +81,7 @@ struct ScoreCalculatorView: View {
                     Text("Strokes Played")
                         .bold()
                         .padding(.horizontal, 40)
-                    Stepper("\(number)", value: $number, in: 1...15)
+                    Stepper("\(strokes)", value: $strokes, in: 1...15)
                         .frame(width: 130, height: 80)
                 }
                 Spacer()
