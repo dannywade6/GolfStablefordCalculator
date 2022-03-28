@@ -11,6 +11,7 @@
 		3000506A27EA772600E45FF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000506927EA772600E45FF8 /* ContentView.swift */; };
 		3000506C27EA772700E45FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506B27EA772700E45FF8 /* Assets.xcassets */; };
 		3000506F27EA772700E45FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506E27EA772700E45FF8 /* Preview Assets.xcassets */; };
+		30509A3427F24E2D00FCED01 /* StablefordCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30509A3327F24E2D00FCED01 /* StablefordCalculator.swift */; };
 		30AC971F27EBD65200A29BCD /* ScoreCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC971E27EBD65200A29BCD /* ScoreCalculatorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		3000506927EA772600E45FF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3000506B27EA772700E45FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3000506E27EA772700E45FF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		30509A3327F24E2D00FCED01 /* StablefordCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StablefordCalculator.swift; sourceTree = "<group>"; };
 		30AC971E27EBD65200A29BCD /* ScoreCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 		3000507527EA772E00E45FF8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				30509A3327F24E2D00FCED01 /* StablefordCalculator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3000506A27EA772600E45FF8 /* ContentView.swift in Sources */,
+				30509A3427F24E2D00FCED01 /* StablefordCalculator.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
 				30AC971F27EBD65200A29BCD /* ScoreCalculatorView.swift in Sources */,
 			);
