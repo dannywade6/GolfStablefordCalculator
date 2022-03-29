@@ -13,89 +13,104 @@ struct ScoreCalculatorView: View {
     @State private var pickerBind = 11
     let strokeIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
+    let holes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
     @State private var holeParNumber = ["3", "4", "5"]
     @State private var par: Int = 1
     @State private var strokes = 1
 
     var body: some View {
 
-        VStack {
-            Spacer()
-            HStack {
-                Image(systemName: "arrow.left")
-                Text("Hole 1")
-                    .font(.headline)
-                Image(systemName: "arrow.right")
-            }
-            Spacer()
-            VStack {
-                Spacer()
-                Text("2")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.bottom)
-                Text("Points")
-                    .font(.title)
-                Spacer()
-            }
-            Spacer()
-            VStack {
-                Divider()
-                HStack {
-                    Text("Par")
-                        .bold()
+        TabView {
+            ForEach(holes, id: \.self) { hole in
 
-                    Picker("Par",selection: $par) {
-                        ForEach(0..<holeParNumber.count) {
-                            Text(holeParNumber[$0])
+                ZStack {
+
+                    VStack {
+                        Spacer()
+                        HStack {
+                            VStack {
+                                Text("Hole \(hole)")
+                                    .font(.headline)
+                                Text("swipe to change hole")
+                                    .font(.callout)
+                                    .padding(.top, 0.5)
+                            }
+
+                        }
+                        Spacer()
+                        VStack {
+                            Spacer()
+                            Text("2")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .padding(.bottom)
+                            Text("Points")
+                                .font(.title)
+                            Spacer()
+                        }
+                        Spacer()
+                        VStack {
+                            Divider()
+                            HStack {
+                                Text("Par")
+                                    .bold()
+
+                                Picker("Par",selection: $par) {
+                                    ForEach(0..<holeParNumber.count) {
+                                        Text(holeParNumber[$0])
+                                    }
+                                }
+                                .pickerStyle(SegmentedPickerStyle())
+                                .frame(width: 250, height: 80)
+                            }
+                        }
+
+                        VStack {
+                            Divider()
+                            .padding()
+
+                            HStack {
+                                Text("Stroke Index")
+                                    .bold()
+                                    .padding()
+
+                                Picker("Stroke Index", selection: $pickerBind)
+                                {
+                                    ForEach(Array(strokeIndex), id: \.self)
+                                        {Text("\($0)")}
+                                }
+                                .frame(width: 110, height: 80)
+                                .clipped()
+                                .pickerStyle(WheelPickerStyle())
+                            }
+
+                            Divider()
+                                .padding()
+
+                            HStack {
+                                Text("Strokes Played")
+                                    .bold()
+                                    .padding(.horizontal, 40)
+                                Stepper("\(strokes)", value: $strokes, in: 1...15)
+                                    .frame(width: 130, height: 80)
+                            }
+                            Spacer()
+
+                            Divider()
+                                .padding()
+                        }
+
+                            Button(action: {
+                                print("Save Score")
+                            }, label: {
+                                Text("Save Score")
+                            })
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .frame(width: 250, height: 80)
                 }
             }
-
-            VStack {
-                Divider()
-                .padding()
-
-                HStack {
-                    Text("Stroke Index")
-                        .bold()
-                        .padding()
-
-                    Picker("Stroke Index", selection: $pickerBind)
-                    {
-                        ForEach(Array(strokeIndex), id: \.self)
-                            {Text("\($0)")}
-                    }
-                    .frame(width: 110, height: 80)
-                    .clipped()
-                    .pickerStyle(WheelPickerStyle())
-                }
-
-                Divider()
-                    .padding()
-
-                HStack {
-                    Text("Strokes Played")
-                        .bold()
-                        .padding(.horizontal, 40)
-                    Stepper("\(strokes)", value: $strokes, in: 1...15)
-                        .frame(width: 130, height: 80)
-                }
-                Spacer()
-
-                Divider()
-                    .padding()
-            }
-
-            Button(action: {
-                print("Save Score")
-            }, label: {
-                Text("Save Score")
-            })
-        }
+            .tabViewStyle(.page)
+            .indexViewStyle(.page(backgroundDisplayMode: .interactive))
     }
 }
 
