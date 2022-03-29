@@ -99,32 +99,6 @@ struct ScoreCalculatorView: View {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 struct ScoreCalculatorView_Previews: PreviewProvider {
     static var previews: some View {
         ScoreCalculatorView()
