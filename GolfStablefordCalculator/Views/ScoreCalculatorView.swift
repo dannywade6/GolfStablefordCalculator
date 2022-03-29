@@ -13,7 +13,7 @@ struct ScoreCalculatorView: View {
     @State private var pickerBind = 11
     let strokeIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
-    let holes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+    @State var holes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
     @State private var holeParNumber = ["3", "4", "5"]
     @State private var par: Int = 1
     @State private var strokes = 1
@@ -28,13 +28,19 @@ struct ScoreCalculatorView: View {
                     VStack {
                         Spacer()
                         HStack {
-                            VStack {
-                                Text("Hole \(hole)")
+                            Button(action: {
+                                print("Previous Hole")
+                            }, label: {
+                                Image(systemName: "arrow.left")
+                            })
+                            Text("Hole \(hole)")
                                     .font(.headline)
-                                Text("swipe to change hole")
-                                    .font(.callout)
-                                    .padding(.top, 0.5)
-                            }
+                            Button(action: {
+                                print("Next Hole")
+                            }, label: {
+                                Image(systemName: "arrow.right")
+                            })
+
 
                         }
                         Spacer()
