@@ -31,19 +31,27 @@ struct ScoreCalculatorView: View {
                         HStack {
                             Spacer()
                             Button(action: {
+                                guard selection > 1 else {
+                                    return selection = 1
+                                }
                                 selection -= 1
                             }, label: {
                                 Image(systemName: "arrow.left")
                             })
+                            .foregroundColor(.green)
                             Spacer()
                             Text("Hole \(hole)")
                                     .font(.headline)
                             Spacer()
                             Button(action: {
+                                guard selection < 18 else {
+                                    return selection = 18
+                                }
                                 selection += 1
                             }, label: {
                                 Image(systemName: "arrow.right")
                             })
+                            .foregroundColor(.green)
                             Spacer()
                         }
 
@@ -66,8 +74,8 @@ struct ScoreCalculatorView: View {
                                     .bold()
 
                                 Picker("Par",selection: $par) {
-                                    ForEach(0..<holeParNumber.count) {
-                                        Text(holeParNumber[$0])
+                                    ForEach(0..<3, id: \.self) { holePar in
+                                        Text(holeParNumber[holePar])
                                     }
                                 }
                                 .pickerStyle(SegmentedPickerStyle())
@@ -115,6 +123,7 @@ struct ScoreCalculatorView: View {
                             }, label: {
                                 Text("Save Score")
                             })
+                            .foregroundColor(.green)
                     }
                     .padding(.top)
                     }
