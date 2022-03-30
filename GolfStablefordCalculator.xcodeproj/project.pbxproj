@@ -14,6 +14,7 @@
 		30509A3427F24E2D00FCED01 /* StablefordCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30509A3327F24E2D00FCED01 /* StablefordCalculator.swift */; };
 		30509A3627F385A900FCED01 /* StablefordCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30509A3527F385A900FCED01 /* StablefordCalculatorModel.swift */; };
 		30AC971F27EBD65200A29BCD /* ScoreCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC971E27EBD65200A29BCD /* ScoreCalculatorView.swift */; };
+		30D9024327F4E2280076CFBA /* ScoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9024227F4E2280076CFBA /* ScoreListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		30509A3327F24E2D00FCED01 /* StablefordCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StablefordCalculator.swift; sourceTree = "<group>"; };
 		30509A3527F385A900FCED01 /* StablefordCalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StablefordCalculatorModel.swift; sourceTree = "<group>"; };
 		30AC971E27EBD65200A29BCD /* ScoreCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculatorView.swift; sourceTree = "<group>"; };
+		30D9024227F4E2280076CFBA /* ScoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				3000506927EA772600E45FF8 /* ContentView.swift */,
 				30AC971E27EBD65200A29BCD /* ScoreCalculatorView.swift */,
+				30D9024227F4E2280076CFBA /* ScoreListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				3000506A27EA772600E45FF8 /* ContentView.swift in Sources */,
 				30509A3427F24E2D00FCED01 /* StablefordCalculator.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
+				30D9024327F4E2280076CFBA /* ScoreListView.swift in Sources */,
 				30509A3627F385A900FCED01 /* StablefordCalculatorModel.swift in Sources */,
 				30AC971F27EBD65200A29BCD /* ScoreCalculatorView.swift in Sources */,
 			);

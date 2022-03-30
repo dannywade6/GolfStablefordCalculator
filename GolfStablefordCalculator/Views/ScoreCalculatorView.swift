@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ScoreCalculatorView: View {
 
-    @State private var strokeIndexNumber = ""
     @State private var pickerBind = 11
     let strokeIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
@@ -18,43 +17,43 @@ struct ScoreCalculatorView: View {
     @State private var par: Int = 1
     @State private var strokes = 1
 
+    @State var selection = 1
+
     var body: some View {
 
-        TabView {
+        TabView(selection: $selection) {
+
             ForEach(holes, id: \.self) { hole in
 
                 ZStack {
 
                     VStack {
-                        Spacer()
                         HStack {
+                            Spacer()
                             Button(action: {
-                                print("Previous Hole")
+                                selection -= 1
                             }, label: {
                                 Image(systemName: "arrow.left")
-                                    .padding(.leading)
                             })
                             Spacer()
                             Text("Hole \(hole)")
                                     .font(.headline)
                             Spacer()
                             Button(action: {
-                                print("Next Hole")
+                                selection += 1
                             }, label: {
                                 Image(systemName: "arrow.right")
-                                    .padding(.trailing)
                             })
-                            .padding(.top, 15.0)
-
-
+                            Spacer()
                         }
+
                         Spacer()
                         VStack {
                             Spacer()
                             Text("2")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
-                                .padding(.bottom)
+                                .padding(.bottom, 0.75)
                             Text("Points")
                                 .font(.title)
                             Spacer()
@@ -116,7 +115,8 @@ struct ScoreCalculatorView: View {
                             }, label: {
                                 Text("Save Score")
                             })
-                        }
+                    }
+                    .padding(.top)
                     }
                 }
             }
