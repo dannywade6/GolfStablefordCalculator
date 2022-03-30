@@ -32,14 +32,19 @@ struct ScoreCalculatorView: View {
                                 print("Previous Hole")
                             }, label: {
                                 Image(systemName: "arrow.left")
+                                    .padding(.leading)
                             })
+                            Spacer()
                             Text("Hole \(hole)")
                                     .font(.headline)
+                            Spacer()
                             Button(action: {
                                 print("Next Hole")
                             }, label: {
                                 Image(systemName: "arrow.right")
+                                    .padding(.trailing)
                             })
+                            .padding(.top, 15.0)
 
 
                         }
