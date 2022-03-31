@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScoreCalculatorView: View {
 
-    @State private var pickerBind = 11
+    @State private var pickerBind = 9
     let strokeIndex = Array(1...18)
     @State var holes = Array(1...18)
 
@@ -118,12 +118,25 @@ struct ScoreCalculatorView: View {
                                 .padding()
                         }
 
+                        HStack {
+                            Spacer()
                             Button(action: {
-                                print("Save Score")
-                            }, label: {
-                                Text("Save Score")
-                            })
+                                    print("Save Score")
+                                }, label: {
+                                    Text("Save Score")
+                                })
                             .foregroundColor(.green)
+                            Spacer()
+                            Button(action: {
+                                    print("Exit View")
+                                }, label: {
+                                    Text("Exit")
+                                })
+                            .foregroundColor(.red)
+                            Spacer()
+
+                        }
+
                     }
                     .padding(.top)
                     }
