@@ -10,9 +10,9 @@ import SwiftUI
 struct ScoreCalculatorView: View {
 
     @State private var pickerBind = 11
-    let strokeIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+    let strokeIndex = Array(1...18)
+    @State var holes = Array(1...18)
 
-    @State var holes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
     @State private var holeParNumber = ["3", "4", "5"]
     @State private var par: Int = 1
     @State private var strokes = 1
