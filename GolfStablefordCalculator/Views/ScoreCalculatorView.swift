@@ -70,12 +70,9 @@ struct ScoreCalculatorView: View {
                         VStack {
                             Divider()
                             HStack {
-                                Text("Par")
-                                    .bold()
-
                                 Picker("Par",selection: $par) {
                                     ForEach(0..<3, id: \.self) { holePar in
-                                        Text(holeParNumber[holePar])
+                                        Text("Par \(holeParNumber[holePar])")
                                     }
                                 }
                                 .pickerStyle(SegmentedPickerStyle())
