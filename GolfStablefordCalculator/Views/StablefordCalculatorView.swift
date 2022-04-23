@@ -18,13 +18,14 @@ struct StablefordCalculatorView: View {
     @State var holes = Array(1...18)
     @State var selection = 1
 
-    let handicap = 21
+    @State private var inputHandicap = 1
+    let handicapArray = Array(1...28)
 
     var calculatePoints: Int {
 
         let gross = Int(inputGross)
         let strokeIndex = Int(selectedStrokeIndex)
-//        let handicap = Int(inputHandicap)
+        let handicap = Int(inputHandicap) ?? 0
         let par = Int(selectedParIndex)
 
         var net: Int = 0
@@ -129,9 +130,21 @@ struct StablefordCalculatorView: View {
                             Text("Points")
                                 .font(.title)
                             Spacer()
-                            Text("Handicap: \(handicap)")
-                                .fontWeight(.light)
-                                .foregroundColor(Color.gray)
+
+                            VStack {
+                                Text("Handicap:")
+                                    .fontWeight(.regular)
+
+                                Picker("Handicap", selection: $inputHandicap)
+                                {
+                                    ForEach(Array(handicapArray), id: \.self) {
+                                        Text("\($0)")
+
+                                    }
+                                }
+
+                            }
+
                         }
                         Spacer()
                         VStack {
