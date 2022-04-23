@@ -10,7 +10,7 @@ import SwiftUI
 struct StablefordCalculatorView: View {
 
     @State private var selectedParIndex = 4
-    @State private var inputGross = 1
+    @State private var inputGross = 3
 
     @State private var selectedStrokeIndex = 9
     let strokeIndexArray = Array(1...18)
@@ -129,6 +129,9 @@ struct StablefordCalculatorView: View {
                             Text("Points")
                                 .font(.title)
                             Spacer()
+                            Text("Handicap: \(handicap)")
+                                .fontWeight(.light)
+                                .foregroundColor(Color.gray)
                         }
                         Spacer()
                         VStack {
