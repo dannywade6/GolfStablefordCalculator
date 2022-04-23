@@ -11,7 +11,7 @@ import SwiftUI
 struct GolfStablefordCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ScoreCalculatorView()
+            StablefordCalculatorView()
         }
     }
 }
