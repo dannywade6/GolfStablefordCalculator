@@ -1,13 +1,13 @@
 //
-//  StablefordView.swift
+//  HoleScoreCalculator.swift
 //  GolfStablefordCalculator
 //
-//  Created by Danny Wade on 23/04/2022.
+//  Created by Danny Wade on 09/05/2022.
 //
 
 import SwiftUI
 
-struct StablefordCalculatorView: View {
+struct HoleScoreCalculator: View {
 
     @State private var selectedParIndex = 4
     @State private var inputGross = 3
@@ -18,80 +18,12 @@ struct StablefordCalculatorView: View {
     @State var holes = Array(1...18)
     @State var selection = 1
 
-    @State private var inputHandicap = 1
-    let handicapArray = Array(1...28)
-
-    var calculatePoints: Int {
-
-        let gross = Int(inputGross)
-        let strokeIndex = Int(selectedStrokeIndex)
-        let handicap = Int(inputHandicap) ?? 0
-        let par = Int(selectedParIndex)
-
-        var net: Int = 0
-        var points: Int = 0
-
-        if handicap <= 18 {
-                if handicap - strokeIndex >= 0 {
-                    net = (gross - 1)
-                }
-                else {
-                    net = gross
-                }
-            }
-
-        if handicap > 18 {
-                if (handicap - 18) - strokeIndex >= 0 {
-                    net = (gross - 2)
-                }
-                else {
-                    net = (gross - 1)
-                }
-            }
-
-            switch net {
-            case _ where net >= par + 2:
-                points = 0
-                return points
-
-            case _ where net == par + 1:
-                points = 1
-                return points
-
-            case _ where net == par:
-                points = 2
-                return points
-
-            case _ where net == par - 1:
-                points = 3
-                return points
-
-            case _ where net == par - 2:
-                points = 4
-                return points
-
-            case _ where net == par - 3:
-                points = 5
-                return points
-
-            case _ where net == par - 4:
-                points = 6
-                return points
-
-            default:
-                points = 0
-                return points
-    }
-}
-
     var body: some View {
-
         TabView(selection: $selection) {
 
             ForEach(holes, id: \.self) { hole in
 
                 ZStack {
-
                     VStack {
                         HStack {
                             Spacer()
@@ -106,7 +38,7 @@ struct StablefordCalculatorView: View {
                             .foregroundColor(.green)
                             Spacer()
                             Text("Hole \(hole)")
-                                    .font(.headline)
+                                .font(.headline)
                             Spacer()
                             Button(action: {
                                 guard selection < 18 else {
@@ -123,28 +55,13 @@ struct StablefordCalculatorView: View {
                         Spacer()
                         VStack {
                             Spacer()
-                            Text("\(calculatePoints)")
+                            Text("21")
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .padding(.bottom, 0.75)
                             Text("Points")
                                 .font(.title)
                             Spacer()
-
-                            VStack {
-                                Text("Handicap:")
-                                    .fontWeight(.regular)
-
-                                Picker("Handicap", selection: $inputHandicap)
-                                {
-                                    ForEach(Array(handicapArray), id: \.self) {
-                                        Text("\($0)")
-
-                                    }
-                                }
-
-                            }
-
                         }
                         Spacer()
                         VStack {
@@ -156,14 +73,14 @@ struct StablefordCalculatorView: View {
                                     Text("Par 4").tag(4)
                                     Text("Par 5").tag(5)
                                 })
-                                    .pickerStyle(.segmented)
-                                    .frame(width: 250, height: 80)
+                                .pickerStyle(.segmented)
+                                .frame(width: 250, height: 80)
                             }
                         }
 
                         VStack {
                             Divider()
-                            .padding()
+                                .padding()
 
 
                             HStack {
@@ -204,17 +121,17 @@ struct StablefordCalculatorView: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                                    print("Save Score")
-                                }, label: {
-                                    Text("Save Score")
-                                })
+                                print("Save Score")
+                            }, label: {
+                                Text("Save Score")
+                            })
                             .foregroundColor(.green)
                             Spacer()
                             Button(action: {
-                                    print("Exit View")
-                                }, label: {
-                                    Text("Exit")
-                                })
+                                print("Exit View")
+                            }, label: {
+                                Text("Exit")
+                            })
                             .foregroundColor(.red)
                             Spacer()
 
@@ -222,16 +139,20 @@ struct StablefordCalculatorView: View {
 
                     }
                     .padding(.top)
-                    }
                 }
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .indexViewStyle(.page(backgroundDisplayMode: .never))
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .indexViewStyle(.page(backgroundDisplayMode: .never))
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitle("", displayMode: .inline)
+
     }
 }
 
-struct StablefordView_Previews: PreviewProvider {
+struct HoleScore_Previews: PreviewProvider {
     static var previews: some View {
-        StablefordCalculatorView()
+        HoleScoreCalculator()
     }
 }
+

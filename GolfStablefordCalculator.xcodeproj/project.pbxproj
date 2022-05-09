@@ -8,27 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */; };
-		3000506A27EA772600E45FF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000506927EA772600E45FF8 /* ContentView.swift */; };
 		3000506C27EA772700E45FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506B27EA772700E45FF8 /* Assets.xcassets */; };
 		3000506F27EA772700E45FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506E27EA772700E45FF8 /* Preview Assets.xcassets */; };
-		3019F8BD28140A4F002624F0 /* StablefordCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019F8BC28140A4F002624F0 /* StablefordCalculatorView.swift */; };
-		30509A3427F24E2D00FCED01 /* StablefordCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30509A3327F24E2D00FCED01 /* StablefordCalculator.swift */; };
-		30509A3627F385A900FCED01 /* StablefordCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30509A3527F385A900FCED01 /* StablefordCalculatorModel.swift */; };
-		30AC971F27EBD65200A29BCD /* ScoreCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC971E27EBD65200A29BCD /* ScoreCalculatorView.swift */; };
-		30D9024327F4E2280076CFBA /* ScoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9024227F4E2280076CFBA /* ScoreListView.swift */; };
+		30D20C1D28297C4500B2B4C9 /* ScoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D20C1C28297C4500B2B4C9 /* ScoreList.swift */; };
+		30D20C1F28297C5D00B2B4C9 /* CreateScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D20C1E28297C5D00B2B4C9 /* CreateScore.swift */; };
+		30D20C2128297C7600B2B4C9 /* HoleScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D20C2028297C7600B2B4C9 /* HoleScoreCalculator.swift */; };
+		30D20C2328297C8B00B2B4C9 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D20C2228297C8B00B2B4C9 /* Round.swift */; };
+		30D20C2528297C9E00B2B4C9 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D20C2428297C9E00B2B4C9 /* Hole.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3000506427EA772600E45FF8 /* Stableford Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stableford Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfStablefordCalculatorApp.swift; sourceTree = "<group>"; };
-		3000506927EA772600E45FF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3000506B27EA772700E45FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3000506E27EA772700E45FF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3019F8BC28140A4F002624F0 /* StablefordCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StablefordCalculatorView.swift; sourceTree = "<group>"; };
-		30509A3327F24E2D00FCED01 /* StablefordCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StablefordCalculator.swift; sourceTree = "<group>"; };
-		30509A3527F385A900FCED01 /* StablefordCalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StablefordCalculatorModel.swift; sourceTree = "<group>"; };
-		30AC971E27EBD65200A29BCD /* ScoreCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalculatorView.swift; sourceTree = "<group>"; };
-		30D9024227F4E2280076CFBA /* ScoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreListView.swift; sourceTree = "<group>"; };
+		30D20C1C28297C4500B2B4C9 /* ScoreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreList.swift; sourceTree = "<group>"; };
+		30D20C1E28297C5D00B2B4C9 /* CreateScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScore.swift; sourceTree = "<group>"; };
+		30D20C2028297C7600B2B4C9 /* HoleScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleScoreCalculator.swift; sourceTree = "<group>"; };
+		30D20C2228297C8B00B2B4C9 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		30D20C2428297C9E00B2B4C9 /* Hole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */,
-				3000507727EA773900E45FF8 /* Views */,
-				3000507627EA773300E45FF8 /* ViewModels */,
-				3000507527EA772E00E45FF8 /* Models */,
+				30D20C1C28297C4500B2B4C9 /* ScoreList.swift */,
+				30D20C1E28297C5D00B2B4C9 /* CreateScore.swift */,
+				30D20C2028297C7600B2B4C9 /* HoleScoreCalculator.swift */,
+				30D20C2228297C8B00B2B4C9 /* Round.swift */,
+				30D20C2428297C9E00B2B4C9 /* Hole.swift */,
 				3000506B27EA772700E45FF8 /* Assets.xcassets */,
 				3000506D27EA772700E45FF8 /* Preview Content */,
 			);
@@ -77,33 +77,6 @@
 				3000506E27EA772700E45FF8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		3000507527EA772E00E45FF8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				30509A3327F24E2D00FCED01 /* StablefordCalculator.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3000507627EA773300E45FF8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				30509A3527F385A900FCED01 /* StablefordCalculatorModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		3000507727EA773900E45FF8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3000506927EA772600E45FF8 /* ContentView.swift */,
-				30AC971E27EBD65200A29BCD /* ScoreCalculatorView.swift */,
-				30D9024227F4E2280076CFBA /* ScoreListView.swift */,
-				3019F8BC28140A4F002624F0 /* StablefordCalculatorView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,13 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3000506A27EA772600E45FF8 /* ContentView.swift in Sources */,
-				30509A3427F24E2D00FCED01 /* StablefordCalculator.swift in Sources */,
+				30D20C2128297C7600B2B4C9 /* HoleScoreCalculator.swift in Sources */,
+				30D20C2528297C9E00B2B4C9 /* Hole.swift in Sources */,
+				30D20C2328297C8B00B2B4C9 /* Round.swift in Sources */,
+				30D20C1D28297C4500B2B4C9 /* ScoreList.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
-				3019F8BD28140A4F002624F0 /* StablefordCalculatorView.swift in Sources */,
-				30D9024327F4E2280076CFBA /* ScoreListView.swift in Sources */,
-				30509A3627F385A900FCED01 /* StablefordCalculatorModel.swift in Sources */,
-				30AC971F27EBD65200A29BCD /* ScoreCalculatorView.swift in Sources */,
+				30D20C1F28297C5D00B2B4C9 /* CreateScore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

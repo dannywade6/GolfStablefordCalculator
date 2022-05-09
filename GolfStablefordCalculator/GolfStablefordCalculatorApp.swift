@@ -10,8 +10,11 @@ import SwiftUI
 @main
 struct GolfStablefordCalculatorApp: App {
     var body: some Scene {
+
+        let scoreStorage = RoundStorage()
+
         WindowGroup {
-            StablefordCalculatorView()
+            ScoreList().environmentObject(scoreStorage)
         }
     }
 }
