@@ -52,13 +52,15 @@ struct CreateScore: View {
                     Spacer()
 
                     Button(action: {
-                        whiteScale += 2
+                            whiteScale += 2                        
                     }) {
                         Circle()
                             .strokeBorder(Color.black, lineWidth: whiteScale)
                             .background(Circle().foregroundColor(Color.white))
                             .frame(width: 40, height: 30)
                     }
+                    .buttonStyle(BorderlessButtonStyle())
+                    
                     Button(action: {
                         yellowScale += 2
                     }) {
@@ -67,6 +69,8 @@ struct CreateScore: View {
                             .background(Circle().foregroundColor(Color.yellow))
                             .frame(width: 40, height: 30)
                     }
+                    .buttonStyle(BorderlessButtonStyle())
+                    
                     Button(action: {
                         redScale += 2
                     }) {
@@ -75,6 +79,8 @@ struct CreateScore: View {
                             .background(Circle().foregroundColor(Color.red))
                             .frame(width: 40, height: 30)
                     }
+                    .buttonStyle(BorderlessButtonStyle())
+                    
                     Button(action: {
                         blueScale += 2
                     }) {
@@ -83,6 +89,8 @@ struct CreateScore: View {
                             .background(Circle().foregroundColor(Color.blue))
                             .frame(width: 40, height: 30)
                     }
+                    .buttonStyle(BorderlessButtonStyle())
+                    
                 }
             }
 

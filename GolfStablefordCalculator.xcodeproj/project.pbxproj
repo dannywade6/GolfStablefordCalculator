@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E92D71282A761200958EF0 /* TeeRowTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92D70282A761200958EF0 /* TeeRowTemp.swift */; };
 		3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */; };
 		3000506C27EA772700E45FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506B27EA772700E45FF8 /* Assets.xcassets */; };
 		3000506F27EA772700E45FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506E27EA772700E45FF8 /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00E92D70282A761200958EF0 /* TeeRowTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeeRowTemp.swift; sourceTree = "<group>"; };
 		3000506427EA772600E45FF8 /* Stableford Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stableford Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfStablefordCalculatorApp.swift; sourceTree = "<group>"; };
 		3000506B27EA772700E45FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				30D20C2428297C9E00B2B4C9 /* Hole.swift */,
 				3000506B27EA772700E45FF8 /* Assets.xcassets */,
 				3000506D27EA772700E45FF8 /* Preview Content */,
+				00E92D70282A761200958EF0 /* TeeRowTemp.swift */,
 			);
 			path = GolfStablefordCalculator;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				30D20C1D28297C4500B2B4C9 /* ScoreList.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
 				30D20C1F28297C5D00B2B4C9 /* CreateScore.swift in Sources */,
+				00E92D71282A761200958EF0 /* TeeRowTemp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
