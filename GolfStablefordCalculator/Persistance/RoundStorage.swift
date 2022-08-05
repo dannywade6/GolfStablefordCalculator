@@ -1,8 +1,8 @@
 //
-//  Round.swift
+//  RoundStorage.swift
 //  GolfStablefordCalculator
 //
-//  Created by Danny Wade on 09/05/2022.
+//  Created by Danny Wade on 05/08/2022.
 //
 
 import Foundation
@@ -10,17 +10,9 @@ import Foundation
 struct Round: Identifiable, Codable {
     var id = UUID()
     var points: Int
-    var course: String
-    var date: Date
-    //    var handicap: Int
-    //    var tee: String
-
-    init(points: Int, course: String, date: Date /*handicap: Int, tee: String*/) {
+    
+    init(points: Int) {
         self.points = points
-        self.course = course
-        self.date = date
-        //        self.handicap = handicap
-        //        self.tee = tee
     }
 }
 
@@ -30,7 +22,7 @@ class RoundStorage: ObservableObject {
             UserDefaults.standard.set(try? PropertyListEncoder().encode(rounds), forKey: "round")
         }
     }
-
+    
     init() {
         if let data = UserDefaults.standard.value(forKey: "round") as? Data {
             if let userDefaultScores = try? PropertyListDecoder().decode(Array<Round>.self, from: data) {
