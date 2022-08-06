@@ -21,6 +21,8 @@ struct ButtonView: View {
             Spacer()
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
+                viewModel.whichHole = 1
+                viewModel.clearScore()
             }, label: {
                 Text("Discard Score")
                     .font(.headline)
@@ -39,6 +41,8 @@ struct ButtonView: View {
             Button(action: {
                 roundStorage.rounds.append(Round(points: viewModel.totalScore))
                 self.presentationMode.wrappedValue.dismiss()
+                viewModel.whichHole = 1
+                viewModel.clearScore()
             }, label: {
                 Text("Save Score")
                     .font(.headline)
