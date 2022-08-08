@@ -21,6 +21,8 @@
 		30500F05289D87070076BB08 /* RoundStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500F04289D87070076BB08 /* RoundStorage.swift */; };
 		30541414289EEEB00029F792 /* ListDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30541413289EEEB00029F792 /* ListDropDownView.swift */; };
 		30541416289EF2A00029F792 /* PreviousRoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30541415289EF2A00029F792 /* PreviousRoundsView.swift */; };
+		3054141828A171AA0029F792 /* RoundData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141728A171AA0029F792 /* RoundData.swift */; };
+		3054141A28A174210029F792 /* RoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141928A174210029F792 /* RoundViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		30500F04289D87070076BB08 /* RoundStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundStorage.swift; sourceTree = "<group>"; };
 		30541413289EEEB00029F792 /* ListDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDropDownView.swift; sourceTree = "<group>"; };
 		30541415289EF2A00029F792 /* PreviousRoundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousRoundsView.swift; sourceTree = "<group>"; };
+		3054141728A171AA0029F792 /* RoundData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundData.swift; sourceTree = "<group>"; };
+		3054141928A174210029F792 /* RoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,11 +75,11 @@
 		3000506627EA772600E45FF8 /* GolfStablefordCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				30500F03289D86F70076BB08 /* Persistance */,
 				3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */,
 				30500EF0289D85ED0076BB08 /* Model */,
 				30500EF2289D85FC0076BB08 /* Views */,
 				30500EF1289D85F40076BB08 /* ViewModel */,
+				30500F03289D86F70076BB08 /* Persistance */,
 				3000506B27EA772700E45FF8 /* Assets.xcassets */,
 				3000506D27EA772700E45FF8 /* Preview Content */,
 			);
@@ -94,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				30500EF3289D86230076BB08 /* HoleData.swift */,
+				3054141728A171AA0029F792 /* RoundData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				30500F01289D86DE0076BB08 /* HoleViewModel.swift */,
+				3054141928A174210029F792 /* RoundViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,11 +208,13 @@
 				30541414289EEEB00029F792 /* ListDropDownView.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
 				30500EFA289D86590076BB08 /* CreateNewRound.swift in Sources */,
+				3054141A28A174210029F792 /* RoundViewModel.swift in Sources */,
 				30500F05289D87070076BB08 /* RoundStorage.swift in Sources */,
 				30500F00289D867A0076BB08 /* ButtonView.swift in Sources */,
 				30500EFE289D86710076BB08 /* FormView.swift in Sources */,
 				30500EF4289D86230076BB08 /* HoleData.swift in Sources */,
 				30500EF8289D864A0076BB08 /* Old_PreviousRoundsView.swift in Sources */,
+				3054141828A171AA0029F792 /* RoundData.swift in Sources */,
 				30500F02289D86DE0076BB08 /* HoleViewModel.swift in Sources */,
 				30541416289EF2A00029F792 /* PreviousRoundsView.swift in Sources */,
 				30500EF6289D86390076BB08 /* ContentView.swift in Sources */,

@@ -10,15 +10,18 @@ import SwiftUI
 struct CreateNewRound: View {
     
     @EnvironmentObject var viewModel: HoleViewModel
+    @EnvironmentObject var roundViewModel: RoundViewModel
+    @EnvironmentObject var roundStorage: RoundStorage
+    
 
     @State var golfCourseName: String = ""
     @State var selectedDate = Date()
     @State var inputHandicap: Int = 0
 
-    @State var yellowTee: Bool = false
-    @State var blueTee: Bool = false
-    @State var whiteTee: Bool = false
-    @State var redTee: Bool = false
+//    @State var roundViewModel.yellowTee: Bool = false
+//    @State var roundViewModel.blueTee: Bool = false
+//    @State var roundViewModel.whiteTee: Bool = false
+//    @State var roundViewModel.redTee: Bool = false
 
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -42,15 +45,14 @@ struct CreateNewRound: View {
                         .fontWeight(.semibold)
 
 
-                    TextField("Enter Golf Course", text: $golfCourseName)
-
+                    TextField("Enter Golf Course", text: $roundViewModel.courseName)
 
                     HStack {
                         Text("Date:")
                             .font(.title)
                         .fontWeight(.semibold)
                         
-                        DatePicker("", selection: $selectedDate, displayedComponents: .date)
+                        DatePicker("", selection: $roundViewModel.date, displayedComponents: .date)
                     }
                     .padding(.vertical, 2)
 
@@ -70,13 +72,13 @@ struct CreateNewRound: View {
 
                     HStack {
                         Button {
-                            redTee.toggle()
-                            yellowTee = false
-                            whiteTee = false
-                            blueTee = false
+                            roundViewModel.redTee.toggle()
+                            roundViewModel.yellowTee = false
+                            roundViewModel.whiteTee = false
+                            roundViewModel.blueTee = false
                             
                         } label: {
-                            if redTee {
+                            if roundViewModel.redTee {
                                 Circle()
                                     .fill(Color.red)
                                     .frame(width: 50, height: 50)
@@ -98,12 +100,12 @@ struct CreateNewRound: View {
 
 
                         Button {
-                            yellowTee.toggle()
-                            redTee = false
-                            whiteTee = false
-                            blueTee = false
+                            roundViewModel.yellowTee.toggle()
+                            roundViewModel.redTee = false
+                            roundViewModel.whiteTee = false
+                            roundViewModel.blueTee = false
                         } label: {
-                            if yellowTee {
+                            if roundViewModel.yellowTee {
                                 Circle()
                                     .fill(Color.yellow)
                                     .frame(width: 50, height: 50)
@@ -125,12 +127,12 @@ struct CreateNewRound: View {
 
 
                         Button {
-                            whiteTee.toggle()
-                            redTee = false
-                            yellowTee = false
-                            blueTee = false
+                            roundViewModel.whiteTee.toggle()
+                            roundViewModel.redTee = false
+                            roundViewModel.yellowTee = false
+                            roundViewModel.blueTee = false
                         } label: {
-                            if whiteTee {
+                            if roundViewModel.whiteTee {
                                 Circle()
                                     .fill(Color.white)
                                     .frame(width: 50, height: 50)
@@ -152,12 +154,12 @@ struct CreateNewRound: View {
 
 
                         Button {
-                            blueTee.toggle()
-                            redTee = false
-                            yellowTee = false
-                            whiteTee = false
+                            roundViewModel.blueTee.toggle()
+                            roundViewModel.redTee = false
+                            roundViewModel.yellowTee = false
+                            roundViewModel.whiteTee = false
                         } label: {
-                            if blueTee {
+                            if roundViewModel.blueTee {
                                 Circle()
                                     .fill(Color.blue)
                                     .frame(width: 50, height: 50)
@@ -227,5 +229,7 @@ struct CreateNewRound_Previews: PreviewProvider {
     static var previews: some View {
         CreateNewRound()
             .environmentObject(HoleViewModel())
+            .environmentObject(RoundViewModel())
+            .environmentObject(RoundStorage())
     }
 }

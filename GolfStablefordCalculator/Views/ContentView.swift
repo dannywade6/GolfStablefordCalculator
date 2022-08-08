@@ -85,6 +85,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .environmentObject(HoleViewModel())
             .environmentObject(RoundStorage())
-        //        ViewRounds()
+            .environmentObject(RoundViewModel())
     }
 }

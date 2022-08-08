@@ -14,6 +14,7 @@ struct StablefordSandboxApp: App {
             ContentView()
                 .environmentObject(HoleViewModel())
                 .environmentObject(RoundStorage())
+                .environmentObject(RoundViewModel())
         }
     }
 }
