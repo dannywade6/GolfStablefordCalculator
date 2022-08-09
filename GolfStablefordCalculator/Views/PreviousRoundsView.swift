@@ -15,8 +15,6 @@ struct PreviousRoundsView: View {
     @EnvironmentObject var roundViewModel: RoundViewModel
     @EnvironmentObject var viewModel: HoleViewModel
     
-    let roundItems: [String] = ["Points", "Date", "Handicap"]
-    
     var body: some View {
         
         NavigationView {
@@ -35,7 +33,6 @@ struct PreviousRoundsView: View {
                                                     .bold()
                                                 Spacer()
                                                 Text("\(rounds.points)")
-                                                    .font(.title3)
                                                     
                                                     .bold()
                                                     .padding(3)
@@ -46,7 +43,9 @@ struct PreviousRoundsView: View {
                                                 Text("Date:")
                                                     .bold()
                                                 Spacer()
-                                                Text("\(rounds.date.formatted())")
+                                                
+                                                Text("\(rounds.date)")
+//                                                Text("\(rounds.dateShortened())")
                                                     .padding(3)
                                                 
                                             }
@@ -98,6 +97,8 @@ struct PreviousRoundsView: View {
                                                         .shadow(radius: 2)
                                                         .padding(3)
                                                 }
+                                                
+                                                
                             
                                             }
                                                 
@@ -113,13 +114,18 @@ struct PreviousRoundsView: View {
                                         .font(.title2)
                                         .bold()
                                         .foregroundColor(.green)
+                                        .padding()
                                         
                                 }
                             )
                             .accentColor(.green)
 
                         }
+                        
                     }
+                    .onDelete(perform: delete)
+                    .onMove(perform: move)
+                    
                     .padding(.vertical, 7)
                     .padding(.horizontal, 15)
                 }
@@ -136,66 +142,18 @@ struct PreviousRoundsView: View {
             }
             .navigationTitle("Previous Rounds")
         }
+        
     }
+    
+    func delete(indexSet: IndexSet) {
+        roundStorage.rounds.remove(atOffsets: indexSet)
+    }
+
+    func move(indces: IndexSet, newOffset: Int) {
+        roundStorage.rounds.move(fromOffsets: indces, toOffset: newOffset)
+    }
+    
 }
-
-
-
-
-
-
-
-
-//
-//            List {
-//                Section(
-//                    header:
-//                        HStack {
-//                            Text("Rounds")
-//                        }
-//                        .font(.headline)
-//                        .foregroundColor(.green)
-//                        .padding(.bottom, 5)
-//                ) {
-//
-//                    ForEach(roundStorage.rounds) { round in
-//                        HStack {
-//                            Text("\(round.points) Points")
-//                                .bold()
-//                        }
-//                    }
-//                    .onDelete(perform: delete)
-//                    .onMove(perform: move)
-//
-//                }
-//            }
-//            .accentColor(.white)
-//            .listStyle(InsetGroupedListStyle())
-//            .navigationTitle("Previous Rounds")
-//
-//            .toolbar {
-//                Button {
-//                    presentationMode.wrappedValue.dismiss()
-//                } label: {
-//                    HStack {
-//                        Text("Exit")
-//                            .padding(.horizontal, 4)
-//                            .font(.headline)
-//                    }
-//                }
-//            }
-//
-//        }
-//        .accentColor(.red)
-//    }
-//
-//    func delete(indexSet: IndexSet) {
-//        roundStorage.rounds.remove(atOffsets: indexSet)
-//    }
-//
-//    func move(indces: IndexSet, newOffset: Int) {
-//        roundStorage.rounds.move(fromOffsets: indces, toOffset: newOffset)
-
 
 struct PreviousRoundsView_Previews: PreviewProvider {
     static var previews: some View {

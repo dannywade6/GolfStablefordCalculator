@@ -40,7 +40,7 @@ struct ButtonView: View {
             Spacer()
             
             Button(action: {
-                roundStorage.rounds.append(Round(points: viewModel.totalScore, courseName: roundViewModel.courseName, date: roundViewModel.date, handicap: viewModel.handicap, yellowTee: roundViewModel.yellowTee, blueTee: roundViewModel.redTee, whiteTee: roundViewModel.whiteTee, redTee: roundViewModel.blueTee))
+                roundStorage.rounds.append(Round(points: viewModel.totalScore, courseName: roundViewModel.courseName, date: roundViewModel.dateShortened(), handicap: viewModel.handicap, yellowTee: roundViewModel.yellowTee, blueTee: roundViewModel.redTee, whiteTee: roundViewModel.whiteTee, redTee: roundViewModel.blueTee))
                 
                 self.presentationMode.wrappedValue.dismiss()
                 viewModel.whichHole = 1

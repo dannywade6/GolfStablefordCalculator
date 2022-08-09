@@ -11,7 +11,7 @@ struct Round: Identifiable, Codable {
     var id = UUID()
     var points: Int
     var courseName: String
-    var date: Date
+    var date: String
     var handicap: Int
     
     var yellowTee: Bool = false
@@ -19,7 +19,7 @@ struct Round: Identifiable, Codable {
     var whiteTee: Bool = false
     var redTee: Bool = false
     
-    init(points: Int, courseName: String, date: Date, handicap: Int, yellowTee: Bool, blueTee: Bool, whiteTee: Bool, redTee: Bool) {
+    init(points: Int, courseName: String, date: String, handicap: Int, yellowTee: Bool, blueTee: Bool, whiteTee: Bool, redTee: Bool) {
         self.points = points
         self.courseName = courseName
         self.date = date

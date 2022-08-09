@@ -17,4 +17,12 @@ class RoundViewModel: ObservableObject {
     @Published var blueTee: Bool = false
     @Published var whiteTee: Bool = false
     @Published var redTee: Bool = false
+    
+    func dateShortened() -> String {
+        let initialDate = date
+        let formatter1 = DateFormatter()
+        formatter1.dateStyle = .short
+        
+        return formatter1.string(from: initialDate)
+    }
 }
