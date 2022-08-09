@@ -106,9 +106,13 @@ struct PreviousRoundsView: View {
                                     }
                                 }, label: {
                                     Text("\(rounds.courseName)")
+                                        .font(.title3)
+                                        .foregroundColor(.black)
+                                    Spacer()
+                                    Text("\(rounds.points) Points")
                                         .font(.title2)
                                         .bold()
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.green)
                                         
                                 }
                             )
