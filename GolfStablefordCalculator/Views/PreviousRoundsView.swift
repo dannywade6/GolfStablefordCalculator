@@ -15,8 +15,6 @@ struct PreviousRoundsView: View {
     @EnvironmentObject var roundViewModel: RoundViewModel
     @EnvironmentObject var viewModel: HoleViewModel
     
-    var dateFormatter = DateFormatter()
-    
     let roundItems: [String] = ["Points", "Date", "Handicap"]
     
     var body: some View {
