@@ -19,7 +19,6 @@
 		30500F00289D867A0076BB08 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500EFF289D867A0076BB08 /* ButtonView.swift */; };
 		30500F02289D86DE0076BB08 /* HoleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500F01289D86DE0076BB08 /* HoleViewModel.swift */; };
 		30500F05289D87070076BB08 /* RoundStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500F04289D87070076BB08 /* RoundStorage.swift */; };
-		30541414289EEEB00029F792 /* ListDropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30541413289EEEB00029F792 /* ListDropDownView.swift */; };
 		30541416289EF2A00029F792 /* PreviousRoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30541415289EF2A00029F792 /* PreviousRoundsView.swift */; };
 		3054141828A171AA0029F792 /* RoundData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141728A171AA0029F792 /* RoundData.swift */; };
 		3054141A28A174210029F792 /* RoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141928A174210029F792 /* RoundViewModel.swift */; };
@@ -39,7 +38,6 @@
 		30500EFF289D867A0076BB08 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		30500F01289D86DE0076BB08 /* HoleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleViewModel.swift; sourceTree = "<group>"; };
 		30500F04289D87070076BB08 /* RoundStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundStorage.swift; sourceTree = "<group>"; };
-		30541413289EEEB00029F792 /* ListDropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDropDownView.swift; sourceTree = "<group>"; };
 		30541415289EF2A00029F792 /* PreviousRoundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousRoundsView.swift; sourceTree = "<group>"; };
 		3054141728A171AA0029F792 /* RoundData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundData.swift; sourceTree = "<group>"; };
 		3054141928A174210029F792 /* RoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewModel.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				30500EFB289D86630076BB08 /* HoleSelectionView.swift */,
 				30500EFD289D86710076BB08 /* FormView.swift */,
 				30500EFF289D867A0076BB08 /* ButtonView.swift */,
-				30541413289EEEB00029F792 /* ListDropDownView.swift */,
 				30541415289EF2A00029F792 /* PreviousRoundsView.swift */,
 			);
 			path = Views;
@@ -205,7 +202,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30541414289EEEB00029F792 /* ListDropDownView.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
 				30500EFA289D86590076BB08 /* CreateNewRound.swift in Sources */,
 				3054141A28A174210029F792 /* RoundViewModel.swift in Sources */,

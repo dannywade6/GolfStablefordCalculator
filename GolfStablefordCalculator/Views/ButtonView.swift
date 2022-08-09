@@ -11,8 +11,6 @@ struct ButtonView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State var showViewScreen:Bool = false
-    
     @EnvironmentObject var viewModel: HoleViewModel
     @EnvironmentObject var roundStorage: RoundStorage
     @EnvironmentObject var roundViewModel: RoundViewModel

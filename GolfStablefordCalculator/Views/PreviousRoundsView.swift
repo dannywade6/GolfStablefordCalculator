@@ -18,129 +18,132 @@ struct PreviousRoundsView: View {
     var body: some View {
         
         NavigationView {
-            ScrollView {
-                VStack {
-                    ForEach(roundStorage.rounds) { rounds in
-                        GroupBox() {
-                            DisclosureGroup(
-                                content: {
-                                    VStack {
+            
+            VStack {
+                ScrollView {
+                    VStack {
+                        ForEach(roundStorage.rounds) { rounds in
+                            GroupBox() {
+                                DisclosureGroup(
+                                    content: {
                                         VStack {
-                                            Divider().padding(.vertical, 2)
-                                            HStack {
-                                                
-                                                Text("Points:")
-                                                    .bold()
-                                                Spacer()
-                                                Text("\(rounds.points)")
+                                            VStack {
+                                                Divider().padding(.vertical, 2)
+                                                HStack {
                                                     
-                                                    .bold()
-                                                    .padding(3)
-                                            }
-                                            
-                                            Divider().padding(.vertical, 2)
-                                            HStack {
-                                                Text("Date:")
-                                                    .bold()
-                                                Spacer()
-                                                
-                                                Text("\(rounds.date)")
-//                                                Text("\(rounds.dateShortened())")
-                                                    .padding(3)
-                                                
-                                            }
-                                            
-                                            Divider().padding(.vertical, 2)
-                                            HStack {
-                                                Text("Handicap:")
-                                                    .bold()
-                                                Spacer()
-                                                Text("\(rounds.handicap)")
-                                                    .padding(3)
-                                                
-                                            }
-                                            
-                                            Divider().padding(.vertical, 2)
-                                            HStack {
-                                                Text("Tee:")
-                                                    .bold()
-                                                Spacer()
-                                                
-                                                if rounds.redTee {
-                                                    Circle()
-                                                        .fill(Color.red)
-                                                        .frame(width: 25, height: 25)
-                                                        .shadow(radius: 2)
+                                                    Text("Points:")
+                                                        .bold()
+                                                    Spacer()
+                                                    Text("\(rounds.points)")
+                                                    
+                                                        .bold()
                                                         .padding(3)
                                                 }
                                                 
-                                                if rounds.blueTee {
-                                                    Circle()
-                                                        .fill(Color.blue)
-                                                        .frame(width: 25, height: 25)
-                                                        .shadow(radius: 2)
+                                                Divider().padding(.vertical, 2)
+                                                HStack {
+                                                    Text("Date:")
+                                                        .bold()
+                                                    Spacer()
+                                                    
+                                                    Text("\(rounds.date)")
                                                         .padding(3)
+                                                    
                                                 }
                                                 
-                                                if rounds.whiteTee {
-                                                    Circle()
-                                                        .fill(Color.white)
-                                                        .frame(width: 25, height: 25)
-                                                        .shadow(radius: 2)
+                                                Divider().padding(.vertical, 2)
+                                                HStack {
+                                                    Text("Handicap:")
+                                                        .bold()
+                                                    Spacer()
+                                                    Text("\(rounds.handicap)")
                                                         .padding(3)
+                                                    
                                                 }
                                                 
-                                                if rounds.yellowTee {
-                                                    Circle()
-                                                        .fill(Color.yellow)
-                                                        .frame(width: 25, height: 25)
-                                                        .shadow(radius: 2)
-                                                        .padding(3)
+                                                Divider().padding(.vertical, 2)
+                                                HStack {
+                                                    Text("Tee:")
+                                                        .bold()
+                                                    Spacer()
+                                                    
+                                                    if rounds.redTee {
+                                                        Circle()
+                                                            .fill(Color.red)
+                                                            .frame(width: 25, height: 25)
+                                                            .shadow(radius: 2)
+                                                            .padding(3)
+                                                    }
+                                                    
+                                                    if rounds.blueTee {
+                                                        Circle()
+                                                            .fill(Color.blue)
+                                                            .frame(width: 25, height: 25)
+                                                            .shadow(radius: 2)
+                                                            .padding(3)
+                                                    }
+                                                    
+                                                    if rounds.whiteTee {
+                                                        Circle()
+                                                            .fill(Color.white)
+                                                            .frame(width: 25, height: 25)
+                                                            .shadow(radius: 2)
+                                                            .padding(3)
+                                                    }
+                                                    
+                                                    if rounds.yellowTee {
+                                                        Circle()
+                                                            .fill(Color.yellow)
+                                                            .frame(width: 25, height: 25)
+                                                            .shadow(radius: 2)
+                                                            .padding(3)
+                                                    }
                                                 }
-                                                
-                                                
-                            
                                             }
-                                                
-                                            
                                         }
-                                    }
-                                }, label: {
-                                    Text("\(rounds.courseName)")
-                                        .font(.title3)
-                                        .foregroundColor(.black)
-                                    Spacer()
-                                    Text("\(rounds.points) Points")
-                                        .font(.title2)
-                                        .bold()
-                                        .foregroundColor(.green)
-                                        .padding()
+                                    }, label: {
+                                        Text("\(rounds.courseName)")
+                                            .font(.title3)
+                                            .foregroundColor(.black)
+                                        Spacer()
+                                        Text("\(rounds.points) Points")
+                                            .font(.title2)
+                                            .bold()
+                                            .foregroundColor(.green)
+                                            .padding()
                                         
-                                }
-                            )
-                            .accentColor(.green)
-
+                                    }
+                                )
+                                .accentColor(.green)
+                                
+                            }
+                            
                         }
+                        .onDelete(perform: delete)
+                        .onMove(perform: move)
                         
+                        .padding(.vertical, 7)
+                        .padding(.horizontal, 15)
                     }
-                    .onDelete(perform: delete)
-                    .onMove(perform: move)
-                    
-                    .padding(.vertical, 7)
-                    .padding(.horizontal, 15)
                 }
+                .navigationTitle("Previous Rounds")
                 
-                Button {
+                Button(action: {
                     presentationMode.wrappedValue.dismiss()
-                } label: {
-                    HStack {
-                        Text("Exit")
-                            .padding(.horizontal, 4)
-                            .font(.headline)
-                    }
-                }
+                }, label: {
+                    Text("Exit")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.red)
+                        .padding()
+                        .padding(.horizontal, 10)
+                        .background(
+                            Capsule()
+                                .stroke(Color.red, lineWidth: 2.0))
+                })
+                .padding(10)
+                
             }
-            .navigationTitle("Previous Rounds")
         }
         
     }
@@ -148,7 +151,7 @@ struct PreviousRoundsView: View {
     func delete(indexSet: IndexSet) {
         roundStorage.rounds.remove(atOffsets: indexSet)
     }
-
+    
     func move(indces: IndexSet, newOffset: Int) {
         roundStorage.rounds.move(fromOffsets: indces, toOffset: newOffset)
     }
