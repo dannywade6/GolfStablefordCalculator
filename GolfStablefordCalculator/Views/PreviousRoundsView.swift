@@ -18,7 +18,6 @@ struct PreviousRoundsView: View {
     var body: some View {
         
         NavigationView {
-            
             VStack {
                 ScrollView {
                     VStack {
@@ -147,6 +146,8 @@ struct PreviousRoundsView: View {
         }
         
     }
+    
+    // Test
     
     func delete(indexSet: IndexSet) {
         roundStorage.rounds.remove(atOffsets: indexSet)
