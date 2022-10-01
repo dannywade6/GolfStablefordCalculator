@@ -116,16 +116,19 @@ struct PreviousRoundsView: View {
                                 .accentColor(.green)
                                 
                             }
+                            .overlay(
+                                DeleteButton(),
+                                alignment: .topTrailing
+                            )
                             
                         }
-                        .onDelete(perform: delete)
-                        .onMove(perform: move)
-                        
+                        .onDelete(perform: removeRows)
                         .padding(.vertical, 7)
                         .padding(.horizontal, 15)
                     }
                 }
                 .navigationTitle("Previous Rounds")
+                .navigationBarItems(trailing: EditButton().foregroundColor(.red))
                 
                 Button(action: {
                     presentationMode.wrappedValue.dismiss()
@@ -147,17 +150,38 @@ struct PreviousRoundsView: View {
         
     }
     
-    // Test
+    func removeRows(at offsets: IndexSet) {
+        withAnimation {
+            roundStorage.rounds.remove(atOffsets: offsets)
+        }
+    }
+}
+
+struct DeleteButton: View {
+    @Environment(\.editMode) var editMode
+    @EnvironmentObject var roundStorage: RoundStorage
     
+    var body: some View {
+        VStack {
+            if self.editMode?.wrappedValue == .active {
+                Button {
+//                    roundStorage.rounds.remove(at: )
+                } label: {
+                    Image(systemName: "minus.circle.fill")
+                        .foregroundColor(.red)
+                        .font(.title)
+                        .padding(.trailing, 4)
+                }
+                .offset(x: 10, y: -10)
+
+            }
+        }
+    }
     func delete(indexSet: IndexSet) {
         roundStorage.rounds.remove(atOffsets: indexSet)
     }
-    
-    func move(indces: IndexSet, newOffset: Int) {
-        roundStorage.rounds.move(fromOffsets: indces, toOffset: newOffset)
-    }
-    
 }
+
 
 struct PreviousRoundsView_Previews: PreviewProvider {
     static var previews: some View {
