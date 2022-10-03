@@ -10,6 +10,8 @@
 		3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */; };
 		3000506C27EA772700E45FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506B27EA772700E45FF8 /* Assets.xcassets */; };
 		3000506F27EA772700E45FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506E27EA772700E45FF8 /* Preview Assets.xcassets */; };
+		30318A0628EB7796002AD72F /* HomeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30318A0528EB7796002AD72F /* HomeChartView.swift */; };
+		30492D5C28EB7B2D006D4729 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30492D5B28EB7B2D006D4729 /* LogInView.swift */; };
 		30500EF4289D86230076BB08 /* HoleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500EF3289D86230076BB08 /* HoleData.swift */; };
 		30500EF6289D86390076BB08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500EF5289D86390076BB08 /* ContentView.swift */; };
 		30500EFA289D86590076BB08 /* CreateNewRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500EF9289D86590076BB08 /* CreateNewRound.swift */; };
@@ -29,6 +31,8 @@
 		3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfStablefordCalculatorApp.swift; sourceTree = "<group>"; };
 		3000506B27EA772700E45FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3000506E27EA772700E45FF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		30318A0528EB7796002AD72F /* HomeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChartView.swift; sourceTree = "<group>"; };
+		30492D5B28EB7B2D006D4729 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		30500EF3289D86230076BB08 /* HoleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleData.swift; sourceTree = "<group>"; };
 		30500EF5289D86390076BB08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30500EF9289D86590076BB08 /* CreateNewRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewRound.swift; sourceTree = "<group>"; };
@@ -114,7 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				30500EF5289D86390076BB08 /* ContentView.swift */,
+				30492D5B28EB7B2D006D4729 /* LogInView.swift */,
 				30A1E58028E880E300C11D43 /* HomeView.swift */,
+				30318A0528EB7796002AD72F /* HomeChartView.swift */,
 				30500EF9289D86590076BB08 /* CreateNewRound.swift */,
 				30500EFB289D86630076BB08 /* HoleSelectionView.swift */,
 				30500EFD289D86710076BB08 /* FormView.swift */,
@@ -202,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30492D5C28EB7B2D006D4729 /* LogInView.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
 				30A1E58128E880E300C11D43 /* HomeView.swift in Sources */,
 				30500EFA289D86590076BB08 /* CreateNewRound.swift in Sources */,
@@ -214,6 +221,7 @@
 				30500F02289D86DE0076BB08 /* HoleViewModel.swift in Sources */,
 				30541416289EF2A00029F792 /* PreviousRoundsView.swift in Sources */,
 				30500EF6289D86390076BB08 /* ContentView.swift in Sources */,
+				30318A0628EB7796002AD72F /* HomeChartView.swift in Sources */,
 				30500EFC289D86630076BB08 /* HoleSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +361,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,6 +391,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

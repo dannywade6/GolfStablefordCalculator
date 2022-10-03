@@ -57,14 +57,14 @@ struct HomeView: View {
                                 .font(.headline)
                                 .fullScreenCover(isPresented: $showCreateScreen) {
                                     CreateNewRound()
-                        }
-                        
-                        .frame(width: 162, height: 53)
-                        .background(
-                            LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
-                        .cornerRadius(18)
-                        
-                        
+                                }
+                            
+                                .frame(width: 162, height: 53)
+                                .background(
+                                    LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
+                                .cornerRadius(18)
+                            
+                            
                         }
                         
                         Button {
@@ -87,11 +87,11 @@ struct HomeView: View {
                         
                     }
                     
-                    //
-                    //                LineChart1()
-                    //                    .frame(width: 350, height: 400)
-                    //                    .padding(.top, 40)
-                    //                    .padding(.bottom, 100)
+                    
+                    HomeChartView()
+                        .frame(width: 350, height: 400)
+                        .padding(.top, 40)
+                        .padding(.bottom, 100)
                 }
                 .toolbar {
                     Button {

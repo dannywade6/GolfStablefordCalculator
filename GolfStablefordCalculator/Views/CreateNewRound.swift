@@ -42,8 +42,9 @@ struct CreateNewRound_Previews: PreviewProvider {
 
 struct NewRoundButtons: View {
     
-    @Environment(\.presentationMode) var presentationMode
     @State var showScoringSheet: Bool = false
+    @State var showHomeScreen: Bool = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
@@ -70,7 +71,8 @@ struct NewRoundButtons: View {
                 }
                 
                 Button {
-                    presentationMode.wrappedValue.dismiss()
+                    //                    presentationMode.wrappedValue.dismiss()
+                    showHomeScreen.toggle()
                 } label: {
                     Text("Exit")
                         .foregroundColor(Color("red1"))
@@ -83,8 +85,10 @@ struct NewRoundButtons: View {
                         )
                 }
                 .padding(.bottom, 15)
+                .fullScreenCover(isPresented: $showHomeScreen) {
+                    HomeView()
+                }
             }
-            
         }
     }
 }
