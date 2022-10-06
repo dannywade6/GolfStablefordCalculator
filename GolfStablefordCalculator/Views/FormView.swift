@@ -27,7 +27,7 @@ struct FormView: View {
                 HoleSelectionView()
                 
                 TabView(selection: $viewModel.whichHole) {
-                    ForEach(0..<(viewModel.allHoles.count + 1), id: \.self) { hole in
+                    ForEach(1..<(viewModel.allHoles.count + 1), id: \.self) { hole in
                         ZStack {
                             VStack {
                                 VStack {

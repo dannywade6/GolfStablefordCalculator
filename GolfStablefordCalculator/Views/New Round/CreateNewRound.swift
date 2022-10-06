@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CreateNewRound: View {
     
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
     var body: some View {
+        
+        
         
         // MARK: - Background
         ZStack {
@@ -23,6 +27,21 @@ struct CreateNewRound: View {
                 NewRoundButtons()
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action : {
+                        self.mode.wrappedValue.dismiss()
+                    }){
+                        HStack {
+                            Image(systemName: "arrow.left")
+                                .font(.headline)
+                            Text("Create Round")
+                                .padding(.leading, 15)
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                        }
+                        .foregroundColor(Color("text1"))
+                        
+                    })
     }
 }
 
@@ -58,7 +77,7 @@ struct NewRoundContent: View {
             HStack {
                 Text("Golf Course Name:")
                     .foregroundColor(Color("text1"))
-                    .font(.title3)
+                    .font(.headline)
                     .fontWeight(.semibold)
                 Spacer()
             }
@@ -79,7 +98,7 @@ struct NewRoundContent: View {
             HStack {
                 Text("Date:")
                     .foregroundColor(Color("text1"))
-                    .font(.title3)
+                    .font(.headline)
                     .fontWeight(.semibold)
                 Spacer()
             }
@@ -102,7 +121,7 @@ struct NewRoundContent: View {
             HStack {
                 Text("Handicap:")
                     .foregroundColor(Color("text1"))
-                    .font(.title3)
+                    .font(.headline)
                     .fontWeight(.semibold)
                 Spacer()
             }
@@ -127,7 +146,7 @@ struct NewRoundContent: View {
             HStack {
                 Text("Tee:")
                     .foregroundColor(Color("text1"))
-                    .font(.title3)
+                    .font(.headline)
                     .fontWeight(.semibold)
                 Spacer()
             }
@@ -135,10 +154,9 @@ struct NewRoundContent: View {
             TeeView()
             
             Spacer()
-            
-            
         }
         .padding(.horizontal)
+        .padding()
     }
 }
 
