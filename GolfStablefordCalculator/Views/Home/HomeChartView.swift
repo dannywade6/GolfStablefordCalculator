@@ -34,6 +34,8 @@ struct HomeChartView: View {
             }
             .foregroundColor(Color("green1"))
         }
+        .padding(.horizontal)
+        .padding(.bottom)
         
     }
 }

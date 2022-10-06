@@ -6,17 +6,19 @@
 //
 
 import Foundation
-
-
+import SwiftUI
 
 class RoundViewModel: ObservableObject {
     @Published var courseName: String = ""
     @Published var date: Date = Date()
     @Published var points: Int = 0
-    @Published var yellowTee: Bool = false
-    @Published var blueTee: Bool = false
-    @Published var whiteTee: Bool = false
-    @Published var redTee: Bool = false
+    
+    @Published var selectedTee: Tee = .red
+    
+//    @Published var yellowTee: Bool = false
+//    @Published var blueTee: Bool = false
+//    @Published var whiteTee: Bool = false
+//    @Published var redTee: Bool = false
     
     func dateShortened() -> String {
         let initialDate = date
@@ -24,5 +26,31 @@ class RoundViewModel: ObservableObject {
         formatter1.dateStyle = .short
         
         return formatter1.string(from: initialDate)
+    }
+    
+    
+}
+
+enum Tee: String, CaseIterable, Identifiable {
+    case red = "Red"
+    case yellow = "Yellow"
+    case white = "White"
+    case blue = "Blue"
+    
+    var id: String {
+        rawValue
+    }
+    
+    var color: Color {
+        switch self {
+        case .red:
+            return Color("teeRed1")
+        case .yellow:
+            return Color("teeYellow1")
+        case . white:
+            return .white
+        case .blue:
+            return Color("teeBlue1")
+        }
     }
 }

@@ -17,95 +17,102 @@ struct FormView: View {
     let strokeIndexArray = Array(1...18)
     
     var body: some View {
-        VStack {
-            HoleSelectionView()
+        ZStack {
             
-            TabView(selection: $viewModel.whichHole) {
-                ForEach(0..<(viewModel.allHoles.count + 1), id: \.self) { hole in
-                    ZStack {
-                        VStack {
+            LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                .opacity(0.1)
+                .ignoresSafeArea()
+            
+            VStack {
+                HoleSelectionView()
+                
+                TabView(selection: $viewModel.whichHole) {
+                    ForEach(0..<(viewModel.allHoles.count + 1), id: \.self) { hole in
+                        ZStack {
                             VStack {
-                                Spacer()
-                                
-                                Text("\(viewModel.holeScore(forHoleNumber: viewModel.whichHole))")
-                                    .font(.largeTitle)
-                                    .fontWeight(.bold)
-                                    .padding(.bottom, 0.75)
-                                Text("Points")
-                                    .font(.title)
-                                Spacer()
-                                
-                                Text("Total Points: \(viewModel.totalScore)")
-                                    .font(.title2)
-                                    .foregroundColor(Color.gray)
-                                    .bold()
-                                Text("Playing Handicap: \(viewModel.handicap)")
-                                    .font(.subheadline)
-                                    .foregroundColor(Color.gray)
-                            }
-                            Spacer()
-                            VStack {
-                                Divider()
-                                
-                                HStack {
-                                    Picker("Select Par:", selection: $viewModel.allHoles[viewModel.whichHole - 1].par, content: {
-                                        Text("Par 3").tag(3)
-                                        Text("Par 4").tag(4)
-                                        Text("Par 5").tag(5)
-                                    })
-                                    .pickerStyle(.segmented)
-                                    .frame(width: 250, height: 80)
-                                }
-                            }
-                            
-                            VStack {
-                                Divider()
-                                    .padding()
-                                
-                                
-                                HStack {
-                                    Text("Stroke Index")
-                                        .bold()
-                                        .padding()
+                                VStack {
+                                    Spacer()
                                     
-                                    Picker("Stroke Index", selection: $viewModel.allHoles[viewModel.whichHole - 1].strokeIndex)
-                                    {
-                                        ForEach(Array(strokeIndexArray), id: \.self) {
-                                            Text("\($0)")
-                                        }
+                                    Text("\(viewModel.holeScore(forHoleNumber: viewModel.whichHole))")
+                                        .font(.largeTitle)
+                                        .fontWeight(.bold)
+                                        .padding(.bottom, 0.75)
+                                    Text("Points")
+                                        .font(.title)
+                                    Spacer()
+                                    
+                                    Text("Total Points: \(viewModel.totalScore)")
+                                        .font(.title2)
+                                        .foregroundColor(Color.gray)
+                                        .bold()
+                                    Text("Playing Handicap: \(viewModel.handicap)")
+                                        .font(.subheadline)
+                                        .foregroundColor(Color.gray)
+                                }
+                                Spacer()
+                                VStack {
+                                    Divider()
+                                    
+                                    HStack {
+                                        Picker("Select Par:", selection: $viewModel.allHoles[viewModel.whichHole - 1].par, content: {
+                                            Text("Par 3").tag(3)
+                                            Text("Par 4").tag(4)
+                                            Text("Par 5").tag(5)
+                                        })
+                                        .pickerStyle(.segmented)
+                                        .frame(width: 250, height: 80)
                                     }
-                                    .frame(width: 110, height: 80)
-                                    .clipped()
-                                    .pickerStyle(WheelPickerStyle())
-                                    
                                 }
                                 
-                                Divider()
-                                    .padding()
-                                
-                                
-                                HStack {
-                                    Text("Strokes Played")
-                                        .bold()
+                                VStack {
+                                    Divider()
                                         .padding()
-                                    Stepper("\(viewModel.allHoles[viewModel.whichHole - 1].strokesPlayed)", value: $viewModel.allHoles[viewModel.whichHole - 1].strokesPlayed, in: 1...11)
-                                        .frame(width: 130, height: 80)
+                                    
+                                    
+                                    HStack {
+                                        Text("Stroke Index")
+                                            .bold()
+                                            .padding()
+                                        
+                                        Picker("Stroke Index", selection: $viewModel.allHoles[viewModel.whichHole - 1].strokeIndex)
+                                        {
+                                            ForEach(Array(strokeIndexArray), id: \.self) {
+                                                Text("\($0)")
+                                            }
+                                        }
+                                        .frame(width: 110, height: 80)
+                                        .clipped()
+                                        .pickerStyle(WheelPickerStyle())
+                                        
+                                    }
+                                    
+                                    Divider()
+                                        .padding()
+                                    
+                                    
+                                    HStack {
+                                        Text("Strokes Played")
+                                            .bold()
+                                            .padding()
+                                        Stepper("\(viewModel.allHoles[viewModel.whichHole - 1].strokesPlayed)", value: $viewModel.allHoles[viewModel.whichHole - 1].strokesPlayed, in: 1...11)
+                                            .frame(width: 130, height: 80)
+                                    }
+                                    Spacer()
+                                    Divider()
+                                        .padding()
                                 }
-                                Spacer()
-                                Divider()
-                                    .padding()
                             }
+                            .padding(.top)
                         }
-                        .padding(.top)
                     }
                 }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .indexViewStyle(.page(backgroundDisplayMode: .never))
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitle("", displayMode: .inline)
+                
+                ButtonView()
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .indexViewStyle(.page(backgroundDisplayMode: .never))
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitle("", displayMode: .inline)
-            
-            ButtonView()
         }
     }
 }

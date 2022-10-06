@@ -14,20 +14,20 @@ struct Round: Identifiable, Codable {
     var date: String
     var handicap: Int
     
-    var yellowTee: Bool = false
-    var blueTee: Bool = false
-    var whiteTee: Bool = false
-    var redTee: Bool = false
+//    var yellowTee: Bool = false
+//    var blueTee: Bool = false
+//    var whiteTee: Bool = false
+//    var redTee: Bool = false
     
-    init(points: Int, courseName: String, date: String, handicap: Int, yellowTee: Bool, blueTee: Bool, whiteTee: Bool, redTee: Bool) {
+    init(points: Int, courseName: String, date: String, handicap: Int) {
         self.points = points
         self.courseName = courseName
         self.date = date
         self.handicap = handicap
-        self.yellowTee = yellowTee
-        self.blueTee = blueTee
-        self.whiteTee = whiteTee
-        self.redTee = redTee
+//        self.yellowTee = yellowTee
+//        self.blueTee = blueTee
+//        self.whiteTee = whiteTee
+//        self.redTee = redTee
     }
 }
 

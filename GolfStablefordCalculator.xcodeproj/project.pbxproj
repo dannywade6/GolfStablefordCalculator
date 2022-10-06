@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0014682328EECF5C001A3EB7 /* TeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0014682228EECF5C001A3EB7 /* TeeView.swift */; };
 		3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */; };
 		3000506C27EA772700E45FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506B27EA772700E45FF8 /* Assets.xcassets */; };
 		3000506F27EA772700E45FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506E27EA772700E45FF8 /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0014682228EECF5C001A3EB7 /* TeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeeView.swift; sourceTree = "<group>"; };
 		3000506427EA772600E45FF8 /* Stableford Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stableford Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfStablefordCalculatorApp.swift; sourceTree = "<group>"; };
 		3000506B27EA772700E45FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0014682428EEE192001A3EB7 /* New Round */ = {
+			isa = PBXGroup;
+			children = (
+				30500EF9289D86590076BB08 /* CreateNewRound.swift */,
+				0014682228EECF5C001A3EB7 /* TeeView.swift */,
+			);
+			path = "New Round";
+			sourceTree = "<group>";
+		};
+		0014682528EEE1A2001A3EB7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				30492D5B28EB7B2D006D4729 /* LogInView.swift */,
+				30A1E58028E880E300C11D43 /* HomeView.swift */,
+				30318A0528EB7796002AD72F /* HomeChartView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		3000505B27EA772600E45FF8 = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +138,9 @@
 		30500EF2289D85FC0076BB08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0014682528EEE1A2001A3EB7 /* Home */,
+				0014682428EEE192001A3EB7 /* New Round */,
 				30500EF5289D86390076BB08 /* ContentView.swift */,
-				30492D5B28EB7B2D006D4729 /* LogInView.swift */,
-				30A1E58028E880E300C11D43 /* HomeView.swift */,
-				30318A0528EB7796002AD72F /* HomeChartView.swift */,
-				30500EF9289D86590076BB08 /* CreateNewRound.swift */,
 				30500EFB289D86630076BB08 /* HoleSelectionView.swift */,
 				30500EFD289D86710076BB08 /* FormView.swift */,
 				30500EFF289D867A0076BB08 /* ButtonView.swift */,
@@ -214,6 +233,7 @@
 				30500EFA289D86590076BB08 /* CreateNewRound.swift in Sources */,
 				3054141A28A174210029F792 /* RoundViewModel.swift in Sources */,
 				30500F05289D87070076BB08 /* RoundStorage.swift in Sources */,
+				0014682328EECF5C001A3EB7 /* TeeView.swift in Sources */,
 				30500F00289D867A0076BB08 /* ButtonView.swift in Sources */,
 				30500EFE289D86710076BB08 /* FormView.swift in Sources */,
 				30500EF4289D86230076BB08 /* HoleData.swift in Sources */,

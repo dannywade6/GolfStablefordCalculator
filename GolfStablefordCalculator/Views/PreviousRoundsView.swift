@@ -61,43 +61,43 @@ struct PreviousRoundsView: View {
                                                 }
                                                 
                                                 Divider().padding(.vertical, 2)
-                                                HStack {
-                                                    Text("Tee:")
-                                                        .bold()
-                                                    Spacer()
-                                                    
-                                                    if rounds.redTee {
-                                                        Circle()
-                                                            .fill(Color.red)
-                                                            .frame(width: 25, height: 25)
-                                                            .shadow(radius: 2)
-                                                            .padding(3)
-                                                    }
-                                                    
-                                                    if rounds.blueTee {
-                                                        Circle()
-                                                            .fill(Color.blue)
-                                                            .frame(width: 25, height: 25)
-                                                            .shadow(radius: 2)
-                                                            .padding(3)
-                                                    }
-                                                    
-                                                    if rounds.whiteTee {
-                                                        Circle()
-                                                            .fill(Color.white)
-                                                            .frame(width: 25, height: 25)
-                                                            .shadow(radius: 2)
-                                                            .padding(3)
-                                                    }
-                                                    
-                                                    if rounds.yellowTee {
-                                                        Circle()
-                                                            .fill(Color.yellow)
-                                                            .frame(width: 25, height: 25)
-                                                            .shadow(radius: 2)
-                                                            .padding(3)
-                                                    }
-                                                }
+//                                                HStack {
+//                                                    Text("Tee:")
+//                                                        .bold()
+//                                                    Spacer()
+//                                                    
+//                                                    if rounds.redTee {
+//                                                        Circle()
+//                                                            .fill(Color.red)
+//                                                            .frame(width: 25, height: 25)
+//                                                            .shadow(radius: 2)
+//                                                            .padding(3)
+//                                                    }
+//                                                    
+//                                                    if rounds.blueTee {
+//                                                        Circle()
+//                                                            .fill(Color.blue)
+//                                                            .frame(width: 25, height: 25)
+//                                                            .shadow(radius: 2)
+//                                                            .padding(3)
+//                                                    }
+//                                                    
+//                                                    if rounds.whiteTee {
+//                                                        Circle()
+//                                                            .fill(Color.white)
+//                                                            .frame(width: 25, height: 25)
+//                                                            .shadow(radius: 2)
+//                                                            .padding(3)
+//                                                    }
+//                                                    
+//                                                    if rounds.yellowTee {
+//                                                        Circle()
+//                                                            .fill(Color.yellow)
+//                                                            .frame(width: 25, height: 25)
+//                                                            .shadow(radius: 2)
+//                                                            .padding(3)
+//                                                    }
+//                                                }
                                             }
                                         }
                                     }, label: {

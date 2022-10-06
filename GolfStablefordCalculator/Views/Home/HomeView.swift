@@ -18,7 +18,7 @@ struct HomeView: View {
                 
                 // Background
                 LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    .opacity(0.12)
+                    .opacity(0.1)
                     .ignoresSafeArea()
                 
                 // Content
@@ -109,10 +109,17 @@ struct HomeView: View {
                         
                     }
                     
-                    HomeChartView()
-                        .frame(width: 350, height: 400)
-                        .padding(.top, 40)
-                        .padding(.bottom, 100)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundColor(.white)
+                            .padding(.top)
+                            .padding(.horizontal)
+                        HomeChartView()
+                            .frame(width: 350, height: 400)
+                            .padding(.top, 40)
+                            .padding(.bottom, 100)
+                    }
+                        
                 }
                 .toolbar {
                     Button {

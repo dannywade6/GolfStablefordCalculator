@@ -10,7 +10,11 @@ import SwiftUI
 struct LogInView: View {
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color("green1"), Color("green2")], startPoint: .topLeading, endPoint: .bottom)
+//            LinearGradient(colors: [Color("green1"), Color("green2")], startPoint: .topLeading, endPoint: .bottom)
+//                .ignoresSafeArea()
+            
+            LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                .opacity(0.1)
                 .ignoresSafeArea()
             
             VStack {
