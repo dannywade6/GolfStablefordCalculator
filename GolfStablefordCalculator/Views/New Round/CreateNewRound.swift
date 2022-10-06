@@ -113,6 +113,7 @@ struct NewRoundContent: View {
                         Text("\(handicap)")
                     }
                 }
+                .padding(.horizontal)
             }
             .frame(width: 327, height: 84)
             .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
