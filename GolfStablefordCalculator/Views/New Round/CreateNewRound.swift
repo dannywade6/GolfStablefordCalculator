@@ -92,6 +92,7 @@ struct NewRoundContent: View {
                     .padding()
                 Spacer()
             }
+            .accentColor(Color("green1"))
             .frame(width: 327, height: 62)
             .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
             .shadow(radius: 0.5)
@@ -107,17 +108,17 @@ struct NewRoundContent: View {
             }
             
             HStack {
-                Picker("Handicap", selection: $inputHandicap) {
+                Picker("Handicap", selection: $viewModel.handicap) {
                     ForEach(0...28, id:\.self) { handicap in
                         Text("\(handicap)")
                     }
                 }
             }
-            .scaleEffect(1.2)
-            .pickerStyle(.menu)
-            .frame(width: 327, height: 62)
+            .frame(width: 327, height: 84)
             .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
             .shadow(radius: 0.5)
+            .pickerStyle(.wheel)
+            .clipped()
             
             
             //MARK: - Tee

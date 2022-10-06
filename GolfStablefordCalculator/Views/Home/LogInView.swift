@@ -10,8 +10,6 @@ import SwiftUI
 struct LogInView: View {
     var body: some View {
         ZStack {
-//            LinearGradient(colors: [Color("green1"), Color("green2")], startPoint: .topLeading, endPoint: .bottom)
-//                .ignoresSafeArea()
             
             LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .opacity(0.1)
@@ -19,7 +17,6 @@ struct LogInView: View {
             
             VStack {
                 Spacer()
-//                Image(systemName: "photo.circle")
                 Image("AppIconLogin")
                     
                     .resizable()
@@ -31,14 +28,33 @@ struct LogInView: View {
                 
                 Spacer()
                 
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Golf")
+                            .font(.title)
+                            .fontWeight(.light)
+                            .padding(.trailing, -3)
+                        Text("Scoring")
+                            .font(.title)
+                            .bold()
+                            .overlay {
+                                LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top
+                                )
+                                .mask(
+                                    Text("Scoring")
+                                        .font(.title)
+                                        .bold()
+                                )
+                        }
+                    }
+                }
+                
                 VStack {
                     VStack {
-                        Text("Welcome to Golf Scoring")
-                            .font(.headline)
-                            .foregroundColor(.white)
                             
-                        Text("Sign in to continue")
+                        Text("Sign in to continue:")
                             .font(.subheadline)
+                            .fontWeight(.semibold)
                             .padding(.top, -8.0)
                     }
                     .padding(.bottom, 30)
@@ -70,27 +86,18 @@ struct LogInView: View {
                     .cornerRadius(7)
                     .shadow(radius: 10)
                 }
-                
-                
-                
+
                 Spacer()
-                
                 
                 VStack {
                     Text("Golf Scoring")
-                    Text("Wade Development 2022")
-                        
+                    Text("Developed by Danny Wade")
                 }
-                .foregroundColor(.white)
+                .foregroundColor(Color("green1"))
                 .font(.caption2)
                     
-                
             }
-            
-            
-            
         }
-        
     }
 }
 

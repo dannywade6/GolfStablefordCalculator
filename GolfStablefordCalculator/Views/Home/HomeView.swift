@@ -23,7 +23,6 @@ struct HomeView: View {
                 
                 // Content
                 VStack {
-                    
                     HStack {
                         VStack(alignment: .leading) {
                             Text("Hey!")
