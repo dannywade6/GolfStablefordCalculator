@@ -17,7 +17,8 @@ struct HomeView: View {
             ZStack {
                 
                 // Background
-                LinearGradient(colors: [Color("background1"), Color("background2")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .opacity(0.12)
                     .ignoresSafeArea()
                 
                 // Content
@@ -48,21 +49,42 @@ struct HomeView: View {
                     }
                     
                     HStack {
+                        //                        Button {
+                        //                            showCreateScreen.toggle()
+                        //                        } label: {
+                        //                            Text("New Round")
+                        //                                .fontWeight(.semibold)
+                        //                                .foregroundColor(.white)
+                        //                                .font(.headline)
+                        //                                .fullScreenCover(isPresented: $showCreateScreen) {
+                        //                                    CreateNewRound()
+                        //                                }
+                        //
+                        //                                .frame(width: 162, height: 53)
+                        //                                .background(
+                        //                                    LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
+                        //                                .cornerRadius(18)
+                        //
+                        //
+                        //                        }
+                        
                         Button {
-                            showCreateScreen.toggle()
+                            print("NavigationLink to CreateNewRound()")
                         } label: {
-                            Text("New Round")
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .fullScreenCover(isPresented: $showCreateScreen) {
-                                    CreateNewRound()
-                                }
+                            NavigationLink(destination: CreateNewRound()) {
+                                Text("New Round")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .font(.headline)
+                                //                                .fullScreenCover(isPresented: $showCreateScreen) {
+                                //                                    CreateNewRound()
+                                //                                }
+                                    .frame(width: 162, height: 53)
+                                    .background(
+                                        LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
+                                    .cornerRadius(18)
+                            }
                             
-                                .frame(width: 162, height: 53)
-                                .background(
-                                    LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
-                                .cornerRadius(18)
                             
                             
                         }
@@ -86,7 +108,6 @@ struct HomeView: View {
                         
                         
                     }
-                    
                     
                     HomeChartView()
                         .frame(width: 350, height: 400)

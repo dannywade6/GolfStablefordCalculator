@@ -152,7 +152,7 @@ struct PreviousRoundsView: View {
     
     func removeRows(at offsets: IndexSet) {
         withAnimation {
-            roundStorage.rounds.remove(atOffsets: offsets)
+            
         }
     }
 }
@@ -165,7 +165,8 @@ struct DeleteButton: View {
         VStack {
             if self.editMode?.wrappedValue == .active {
                 Button {
-//                    roundStorage.rounds.remove(at: )
+//                    roundStorage.rounds.remove()
+                    UserDefaults.standard.removeObject(forKey: "rounds")
                 } label: {
                     Image(systemName: "minus.circle.fill")
                         .foregroundColor(.red)

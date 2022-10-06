@@ -20,7 +20,6 @@ struct Round: Identifiable, Codable {
     var redTee: Bool = false
     
     init(points: Int, courseName: String, date: String, handicap: Int, yellowTee: Bool, blueTee: Bool, whiteTee: Bool, redTee: Bool) {
-//        self.id = id
         self.points = points
         self.courseName = courseName
         self.date = date
@@ -47,3 +46,5 @@ class RoundStorage: ObservableObject, Identifiable {
         }
     }
 }
+
+

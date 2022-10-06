@@ -32,7 +32,7 @@ class HoleViewModel: ObservableObject {
     ]
     
     @Published var whichHole: Int = 1
-    @Published var handicap: Int = 0
+    @Published var handicap: Int = 10
     
     var totalScore: Int {
         allHoles.map { $0.points }.reduce(0, +)
