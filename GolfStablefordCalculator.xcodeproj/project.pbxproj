@@ -11,6 +11,7 @@
 		3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */; };
 		3000506C27EA772700E45FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506B27EA772700E45FF8 /* Assets.xcassets */; };
 		3000506F27EA772700E45FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506E27EA772700E45FF8 /* Preview Assets.xcassets */; };
+		3030A91C28F0BC7D00929010 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030A91B28F0BC7D00929010 /* KeyboardResponder.swift */; };
 		30318A0628EB7796002AD72F /* HomeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30318A0528EB7796002AD72F /* HomeChartView.swift */; };
 		30492D5C28EB7B2D006D4729 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30492D5B28EB7B2D006D4729 /* LogInView.swift */; };
 		30500EF4289D86230076BB08 /* HoleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500EF3289D86230076BB08 /* HoleData.swift */; };
@@ -33,6 +34,7 @@
 		3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfStablefordCalculatorApp.swift; sourceTree = "<group>"; };
 		3000506B27EA772700E45FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3000506E27EA772700E45FF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3030A91B28F0BC7D00929010 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		30318A0528EB7796002AD72F /* HomeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChartView.swift; sourceTree = "<group>"; };
 		30492D5B28EB7B2D006D4729 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		30500EF3289D86230076BB08 /* HoleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleData.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				30500EF9289D86590076BB08 /* CreateNewRound.swift */,
 				0014682228EECF5C001A3EB7 /* TeeView.swift */,
+				3030A91B28F0BC7D00929010 /* KeyboardResponder.swift */,
 			);
 			path = "New Round";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30492D5C28EB7B2D006D4729 /* LogInView.swift in Sources */,
+				3030A91C28F0BC7D00929010 /* KeyboardResponder.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
 				30A1E58128E880E300C11D43 /* HomeView.swift in Sources */,
 				30500EFA289D86590076BB08 /* CreateNewRound.swift in Sources */,

@@ -13,8 +13,6 @@ struct CreateNewRound: View {
     
     var body: some View {
         
-        
-        
         // MARK: - Background
         ZStack {
             LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -60,6 +58,8 @@ struct NewRoundContent: View {
     @EnvironmentObject var roundViewModel: RoundViewModel
     @EnvironmentObject var roundStorage: RoundStorage
     
+    @ObservedObject var keyboardResponder = KeyboardResponder()
+
     
     @State var golfCourseName: String = ""
     @State var selectedDate = Date()
@@ -68,95 +68,108 @@ struct NewRoundContent: View {
     @Environment(\.presentationMode) var presentationMode
     @State var showScoringSheet: Bool = false
     
+    
+    
     var body: some View {
         VStack {
             
             Spacer()
             
             //MARK: - Course Name
-            HStack {
-                Text("Golf Course Name:")
-                    .foregroundColor(Color("text1"))
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                Spacer()
+            VStack {
+                HStack {
+                    Text("Golf Course Name:")
+                        .foregroundColor(Color("text1"))
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                
+                HStack {
+                    Image("flag.icon")
+                        .padding()
+                    TextField("Augusta National (Ga.) G.C.",
+                              text: $roundViewModel.courseName)
+                    .foregroundColor(Color(UIColor(red: 0.47, green: 0.51, blue: 0.54, alpha: 1)))
+                }
+                
+                
+                .frame(width: 327, height: 62)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
+                .shadow(radius: 0.5)
+                
             }
-            
-            HStack {
-                Image("flag.icon")
-                    .padding()
-                TextField("Augusta National (Ga.) G.C.",
-                          text: $roundViewModel.courseName)
-                .foregroundColor(Color(UIColor(red: 0.47, green: 0.51, blue: 0.54, alpha: 1)))
-            }
-            .frame(width: 327, height: 62)
-            .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
-            .shadow(radius: 0.5)
+            .padding(.top)
+            .offset(y: keyboardResponder.currentHeight)
             
             //MARK: - Date
             
-            HStack {
-                Text("Date:")
-                    .foregroundColor(Color("text1"))
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                Spacer()
-            }
-            
-            HStack {
-                Image("date.icon")
-                    .padding()
-                DatePicker("", selection: $roundViewModel.date, displayedComponents: .date)
-                    .foregroundColor(Color(UIColor(red: 0.47, green: 0.51, blue: 0.54, alpha: 1)))
-                    .padding()
-                Spacer()
-            }
-            .accentColor(Color("green1"))
-            .frame(width: 327, height: 62)
-            .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
-            .shadow(radius: 0.5)
-            
-            //MARK: - Handicap
-            
-            HStack {
-                Text("Handicap:")
-                    .foregroundColor(Color("text1"))
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                Spacer()
-            }
-            
-            HStack {
-                Picker("Handicap", selection: $viewModel.handicap) {
-                    ForEach(0...28, id:\.self) { handicap in
-                        Text("\(handicap)")
-                    }
+            VStack {
+                HStack {
+                    Text("Date:")
+                        .foregroundColor(Color("text1"))
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                    Spacer()
                 }
-                .padding(.horizontal)
-            }
-            .frame(width: 327, height: 84)
-            .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
-            .shadow(radius: 0.5)
-            .pickerStyle(.wheel)
-            .clipped()
-            
-            
-            //MARK: - Tee
-            
-            HStack {
-                Text("Tee:")
-                    .foregroundColor(Color("text1"))
-                    .font(.headline)
-                    .fontWeight(.semibold)
+                
+                HStack {
+                    Image("date.icon")
+                        .padding()
+                    DatePicker("", selection: $roundViewModel.date, displayedComponents: .date)
+                        .foregroundColor(Color(UIColor(red: 0.47, green: 0.51, blue: 0.54, alpha: 1)))
+                        .padding()
+                    Spacer()
+                }
+                .accentColor(Color("green1"))
+                .frame(width: 327, height: 62)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
+                .shadow(radius: 0.5)
+                
+                //MARK: - Handicap
+                
+                HStack {
+                    Text("Handicap:")
+                        .foregroundColor(Color("text1"))
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                
+                HStack {
+                    Picker("Handicap", selection: $viewModel.handicap) {
+                        ForEach(0...28, id:\.self) { handicap in
+                            Text("\(handicap)")
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                .frame(width: 327, height: 84)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
+                .shadow(radius: 0.5)
+                .pickerStyle(.wheel)
+                .clipped()
+                
+                
+                //MARK: - Tee
+                
+                HStack {
+                    Text("Tee:")
+                        .foregroundColor(Color("text1"))
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                
+                TeeView()
+                
                 Spacer()
             }
-            
-            TeeView()
-            
-            Spacer()
+            .offset(y: keyboardResponder.currentHeight*3)
         }
         .padding(.horizontal)
         .padding()
+
     }
 }
 
@@ -168,6 +181,8 @@ struct NewRoundButtons: View {
     @State var showScoringSheet: Bool = false
     @State var showHomeScreen: Bool = false
     @Environment(\.presentationMode) var presentationMode
+    
+    @ObservedObject var keyboardResponder = KeyboardResponder()
     
     var body: some View {
         VStack {
@@ -213,5 +228,6 @@ struct NewRoundButtons: View {
                 }
             }
         }
+        .offset(y: keyboardResponder.currentHeight*3)
     }
 }
