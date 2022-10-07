@@ -126,8 +126,8 @@
 		3030A91928EF79D800929010 /* Scoring */ = {
 			isa = PBXGroup;
 			children = (
-				30500EFB289D86630076BB08 /* HoleSelectionView.swift */,
 				30500EFD289D86710076BB08 /* FormView.swift */,
+				30500EFB289D86630076BB08 /* HoleSelectionView.swift */,
 				30500EFF289D867A0076BB08 /* ButtonView.swift */,
 			);
 			path = Scoring;

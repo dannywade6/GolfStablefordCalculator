@@ -209,8 +209,8 @@ struct NewRoundButtons: View {
                 }
                 
                 Button {
-                    //                    presentationMode.wrappedValue.dismiss()
-                    showHomeScreen.toggle()
+                                        presentationMode.wrappedValue.dismiss()
+//                    showHomeScreen.toggle()
                 } label: {
                     Text("Exit")
                         .foregroundColor(Color("red1"))
@@ -223,9 +223,9 @@ struct NewRoundButtons: View {
                         )
                 }
                 .padding(.bottom, 15)
-                .fullScreenCover(isPresented: $showHomeScreen) {
-                    HomeView()
-                }
+//                .fullScreenCover(isPresented: $showHomeScreen) {
+//                    HomeView()
+//                }
             }
         }
         .offset(y: keyboardResponder.currentHeight*3)
