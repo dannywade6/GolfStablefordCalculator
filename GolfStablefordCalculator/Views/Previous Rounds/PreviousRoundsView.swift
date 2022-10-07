@@ -17,132 +17,140 @@ struct PreviousRoundsView: View {
     var body: some View {
         
         NavigationView {
-            VStack {
-                ScrollView {
-                    VStack {
-                        ForEach(roundStorage.rounds, id: \.id) { round in
-                            GroupBox() {
-                                DisclosureGroup(
-                                    content: {
-                                        VStack {
+            ZStack {
+                
+                LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .opacity(0.1)
+                    .ignoresSafeArea()
+                
+                
+                VStack {
+                    ScrollView {
+                        VStack {
+                            ForEach(roundStorage.rounds, id: \.id) { round in
+                                GroupBox() {
+                                    DisclosureGroup(
+                                        content: {
                                             VStack {
-                                                Divider().padding(.vertical, 2)
-                                                HStack {
+                                                VStack {
+                                                    Divider().padding(.vertical, 2)
+                                                    HStack {
+                                                        
+                                                        Text("Points:")
+                                                            .bold()
+                                                        Spacer()
+                                                        Text("\(round.points)")
+                                                            .bold()
+                                                            .padding(3)
+                                                    }
                                                     
-                                                    Text("Points:")
-                                                        .bold()
-                                                    Spacer()
-                                                    Text("\(round.points)")
-                                                        .bold()
-                                                        .padding(3)
-                                                }
-                                                
-                                                Divider().padding(.vertical, 2)
-                                                HStack {
-                                                    Text("Date:")
-                                                        .bold()
-                                                    Spacer()
+                                                    Divider().padding(.vertical, 2)
+                                                    HStack {
+                                                        Text("Date:")
+                                                            .bold()
+                                                        Spacer()
+                                                        
+                                                        Text("\(round.date)")
+                                                            .padding(3)
+                                                        //                                                        .bold()
+                                                        
+                                                    }
                                                     
-                                                    Text("\(round.date)")
-                                                        .padding(3)
+                                                    Divider().padding(.vertical, 2)
+                                                    HStack {
+                                                        Text("Handicap:")
+                                                            .bold()
+                                                        Spacer()
+                                                        Text("\(round.handicap)")
+                                                            .padding(3)
+                                                        
+                                                    }
+                                                    
+                                                    Divider().padding(.vertical, 2)
+                                                    //                                                HStack {
+                                                    //                                                    Text("Tee:")
                                                     //                                                        .bold()
-                                                    
+                                                    //                                                    Spacer()
+                                                    //
+                                                    //                                                    if rounds.redTee {
+                                                    //                                                        Circle()
+                                                    //                                                            .fill(Color.red)
+                                                    //                                                            .frame(width: 25, height: 25)
+                                                    //                                                            .shadow(radius: 2)
+                                                    //                                                            .padding(3)
+                                                    //                                                    }
+                                                    //
+                                                    //                                                    if rounds.blueTee {
+                                                    //                                                        Circle()
+                                                    //                                                            .fill(Color.blue)
+                                                    //                                                            .frame(width: 25, height: 25)
+                                                    //                                                            .shadow(radius: 2)
+                                                    //                                                            .padding(3)
+                                                    //                                                    }
+                                                    //
+                                                    //                                                    if rounds.whiteTee {
+                                                    //                                                        Circle()
+                                                    //                                                            .fill(Color.white)
+                                                    //                                                            .frame(width: 25, height: 25)
+                                                    //                                                            .shadow(radius: 2)
+                                                    //                                                            .padding(3)
+                                                    //                                                    }
+                                                    //
+                                                    //                                                    if rounds.yellowTee {
+                                                    //                                                        Circle()
+                                                    //                                                            .fill(Color.yellow)
+                                                    //                                                            .frame(width: 25, height: 25)
+                                                    //                                                            .shadow(radius: 2)
+                                                    //                                                            .padding(3)
+                                                    //                                                    }
+                                                    //                                                }
                                                 }
-                                                
-                                                Divider().padding(.vertical, 2)
-                                                HStack {
-                                                    Text("Handicap:")
-                                                        .bold()
-                                                    Spacer()
-                                                    Text("\(round.handicap)")
-                                                        .padding(3)
-                                                    
-                                                }
-                                                
-                                                Divider().padding(.vertical, 2)
-                                                //                                                HStack {
-                                                //                                                    Text("Tee:")
-                                                //                                                        .bold()
-                                                //                                                    Spacer()
-                                                //
-                                                //                                                    if rounds.redTee {
-                                                //                                                        Circle()
-                                                //                                                            .fill(Color.red)
-                                                //                                                            .frame(width: 25, height: 25)
-                                                //                                                            .shadow(radius: 2)
-                                                //                                                            .padding(3)
-                                                //                                                    }
-                                                //
-                                                //                                                    if rounds.blueTee {
-                                                //                                                        Circle()
-                                                //                                                            .fill(Color.blue)
-                                                //                                                            .frame(width: 25, height: 25)
-                                                //                                                            .shadow(radius: 2)
-                                                //                                                            .padding(3)
-                                                //                                                    }
-                                                //
-                                                //                                                    if rounds.whiteTee {
-                                                //                                                        Circle()
-                                                //                                                            .fill(Color.white)
-                                                //                                                            .frame(width: 25, height: 25)
-                                                //                                                            .shadow(radius: 2)
-                                                //                                                            .padding(3)
-                                                //                                                    }
-                                                //
-                                                //                                                    if rounds.yellowTee {
-                                                //                                                        Circle()
-                                                //                                                            .fill(Color.yellow)
-                                                //                                                            .frame(width: 25, height: 25)
-                                                //                                                            .shadow(radius: 2)
-                                                //                                                            .padding(3)
-                                                //                                                    }
-                                                //                                                }
                                             }
+                                        }, label: {
+                                            Text("\(round.courseName)")
+                                                .font(.title3)
+                                                .foregroundColor(.black)
+                                            Spacer()
+                                            Text("\(round.points) Points")
+                                                .font(.title2)
+                                                .bold()
+                                                .foregroundColor(.green)
+                                                .padding()
+                                            
                                         }
-                                    }, label: {
-                                        Text("\(round.courseName)")
-                                            .font(.title3)
-                                            .foregroundColor(.black)
-                                        Spacer()
-                                        Text("\(round.points) Points")
-                                            .font(.title2)
-                                            .bold()
-                                            .foregroundColor(.green)
-                                            .padding()
-                                        
-                                    }
-                                )
-                                .accentColor(.green)
+                                    )
+                                    .accentColor(.green)
+                                    
+                                }
+                                .overlay(
+                                    DeleteButton(round: round, rounds: $roundStorage.rounds, onDelete: removeRows)
+                                    , alignment: .topTrailing)
                                 
                             }
-                            .overlay(
-                                DeleteButton(round: round, rounds: $roundStorage.rounds, onDelete: removeRows)
-                                , alignment: .topTrailing)
-                            
+                            .onDelete(perform: removeRows)
+                            .padding(.vertical, 7)
+                            .padding(.horizontal, 15)
                         }
-                        .onDelete(perform: removeRows)
-                        .padding(.vertical, 7)
-                        .padding(.horizontal, 15)
                     }
+                    .navigationTitle("Previous Rounds")
+                    .navigationBarItems(trailing: EditButton().foregroundColor(.red))
+                    
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Text("Exit")
+                            .font(.headline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.red)
+                            .padding()
+                            .padding(.horizontal, 10)
+                            .background(
+                                Capsule()
+                                    .stroke(Color.red, lineWidth: 2.0))
+                    })
+                    .padding(10)
+                    
                 }
-                .navigationTitle("Previous Rounds")
-                .navigationBarItems(trailing: EditButton().foregroundColor(.red))
-                
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Text("Exit")
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.red)
-                        .padding()
-                        .padding(.horizontal, 10)
-                        .background(
-                            Capsule()
-                                .stroke(Color.red, lineWidth: 2.0))
-                })
-                .padding(10)
-                
             }
         }
         
