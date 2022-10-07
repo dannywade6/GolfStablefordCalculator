@@ -99,7 +99,7 @@ struct NewRoundContent: View {
                 .shadow(radius: 0.5)
                 
             }
-            .padding(.top)
+            .padding(.top, 10)
             .offset(y: keyboardResponder.currentHeight)
             
             //MARK: - Date

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Round: Identifiable, Codable {
+struct Round: Identifiable, Codable, Equatable {
     var id = UUID()
     var points: Int
     var courseName: String
