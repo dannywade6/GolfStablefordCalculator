@@ -77,10 +77,10 @@
 		0014682528EEE1A2001A3EB7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3030A91D28F0C81B00929010 /* LaunchScreen.storyboard */,
 				30492D5B28EB7B2D006D4729 /* LogInView.swift */,
 				30A1E58028E880E300C11D43 /* HomeView.swift */,
 				30318A0528EB7796002AD72F /* HomeChartView.swift */,
-				3030A91D28F0C81B00929010 /* LaunchScreen.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";

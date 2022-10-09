@@ -33,24 +33,68 @@ struct FormView: View {
                                 VStack {
                                     Spacer()
                                     
-                                    Text("\(viewModel.holeScore(forHoleNumber: viewModel.whichHole))")
-                                        .font(.largeTitle)
-                                        .fontWeight(.bold)
-                                        .padding(.bottom, 0.75)
-                                    Text("Points")
-                                        .font(.title)
+                                    ZStack {
+                                        
+                                        Circle()
+                                            .foregroundColor(.white.opacity(0))
+                                            .frame(width: 141)
+                                            .overlay(
+                                            Circle()
+                                                .strokeBorder(LinearGradient(colors: [Color("green1"), Color("green2")], startPoint: .leading, endPoint: .top), lineWidth: 1.5)
+                                        )
+                                        Circle()
+                                            .overlay(
+                                                LinearGradient(colors: [Color("green3"), Color("green4")], startPoint: .top, endPoint: .bottom))
+                                            .mask(
+                                                Circle()
+                                            )
+                                            .frame(width: 120)
+                                        VStack {
+                                            Text("\(viewModel.totalScore)")
+                                                .font(.largeTitle)
+                                                .fontWeight(.bold)
+//                                                .padding(.bottom, 0.75)
+                                            Text("\(viewModel.totalScore == 1 ? "Point" : "Points")")
+                                        }
+                                        .foregroundColor(.white)
+                                    }
+                                    .padding(.bottom)
+                                    
                                     Spacer()
                                     
-                                    Text("Total Points: \(viewModel.totalScore)")
-                                        .font(.title2)
-                                        .foregroundColor(Color.gray)
-                                        .bold()
                                     Text("Playing Handicap: \(viewModel.handicap)")
-                                        .font(.subheadline)
-                                        .foregroundColor(Color.gray)
+                                        .font(.body)
+                                        .foregroundColor(Color("grey1"))
+                                        .padding(.bottom, 20)
+                                        
+                                    Spacer()
                                 }
+                                
                                 Spacer()
+                                
                                 VStack {
+                                    Divider()
+                                    
+                                    HStack {
+                                        
+                                        Text("Current Hole:")
+                                            .bold()
+                                            .font(.title3)
+                                            .foregroundColor(Color("grey1"))
+//                                            .padding()
+                                        
+                                        Spacer()
+                                        
+                                        Text("\(viewModel.holeScore(forHoleNumber: viewModel.whichHole)) \(viewModel.holeScore(forHoleNumber: viewModel.whichHole) == 1 ? "Point" : "Points")")
+                                            .foregroundColor(Color("green1"))
+                                            .font(.title3)
+                                        
+                                        
+                                        
+                                            
+                                    }
+                                    .frame(width: 250, height: 60)
+                                    
                                     Divider()
                                     
                                     HStack {
@@ -60,8 +104,11 @@ struct FormView: View {
                                             Text("Par 5").tag(5)
                                         })
                                         .pickerStyle(.segmented)
-                                        .frame(width: 250, height: 80)
+                                        .frame(width: 250, height: 55)
+
+
                                     }
+                                    
                                 }
                                 
                                 VStack {
@@ -71,6 +118,8 @@ struct FormView: View {
                                     
                                     HStack {
                                         Text("Stroke Index")
+                                            .font(.title3)
+                                            .foregroundColor(Color("grey1"))
                                             .bold()
                                             .padding()
                                         
@@ -93,9 +142,11 @@ struct FormView: View {
                                     HStack {
                                         Text("Strokes Played")
                                             .bold()
+                                            .font(.title3)
+                                            .foregroundColor(Color("grey1"))
                                             .padding()
                                         Stepper("\(viewModel.allHoles[viewModel.whichHole - 1].strokesPlayed)", value: $viewModel.allHoles[viewModel.whichHole - 1].strokesPlayed, in: 1...11)
-                                            .frame(width: 130, height: 80)
+                                            .frame(width: 130, height: 60)
                                     }
                                     Spacer()
                                     Divider()

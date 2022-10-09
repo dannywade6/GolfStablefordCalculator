@@ -15,7 +15,6 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                
                 // Background
                 LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .opacity(0.1)

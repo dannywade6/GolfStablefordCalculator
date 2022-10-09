@@ -22,15 +22,23 @@ struct HoleSelectionView: View {
                         viewModel.whichHole -= 1
                 } label: {
                     Image(systemName: "arrow.left")
-                        .foregroundColor(.green)
                         .font(.largeTitle)
+                        .overlay {
+                            LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top
+                            )
+                        }
+                        .mask(
+                            Image(systemName: "arrow.left")
+                                .font(.largeTitle)
+                        )
                 }
                 .foregroundColor(.green)
                 Spacer()
                 
                 Text("Hole \(viewModel.whichHole)")
-                    .font(.headline)
-                
+                    .font(.title2)
+                    .fontWeight(.regular)
+                    
                 Spacer()
                 
                 Button {
@@ -42,8 +50,16 @@ struct HoleSelectionView: View {
                 
                 } label: {
                     Image(systemName: "arrow.right")
-                        .foregroundColor(.green)
+
                         .font(.largeTitle)
+                        .overlay {
+                            LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top
+                            )
+                        }
+                        .mask(
+                            Image(systemName: "arrow.right")
+                                .font(.largeTitle)
+                        )
                 }
                 Spacer()
         }

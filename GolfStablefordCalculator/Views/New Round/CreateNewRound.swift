@@ -209,8 +209,7 @@ struct NewRoundButtons: View {
                 }
                 
                 Button {
-                                        presentationMode.wrappedValue.dismiss()
-//                    showHomeScreen.toggle()
+                    presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("Exit")
                         .foregroundColor(Color("red1"))
