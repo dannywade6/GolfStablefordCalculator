@@ -32,21 +32,13 @@ struct ButtonView: View {
                         RoundedRectangle(cornerRadius: 18)
                             .strokeBorder(LinearGradient(colors: [Color("red2"), Color("red3")], startPoint: .leading, endPoint: .top), lineWidth: 1.5)
                     )
-//                    .font(.headline)
-//                    .fontWeight(.semibold)
-//                    .foregroundColor(.red)
-//                    .padding()
-//                    .padding(.horizontal, 10)
-//                    .background(
-//                        Capsule()
-//                            .stroke(Color.red, lineWidth: 2.0))
             })
             .padding(.bottom)
             
             Spacer()
             
             Button(action: {
-                roundStorage.rounds.append(Round(points: viewModel.totalScore, courseName: roundViewModel.courseName, date: roundViewModel.dateShortened(), handicap: viewModel.handicap))
+                roundStorage.rounds.append(Round(points: viewModel.totalScore, courseName: roundViewModel.courseName, date: roundViewModel.dateShortened(), handicap: viewModel.handicap, selectedTee: roundViewModel.selectedTee))
                 
                 self.presentationMode.wrappedValue.dismiss()
                 viewModel.whichHole = 1

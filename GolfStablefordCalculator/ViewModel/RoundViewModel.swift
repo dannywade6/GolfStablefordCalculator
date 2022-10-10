@@ -23,7 +23,7 @@ class RoundViewModel: ObservableObject {
     }
 }
 
-enum Tee: String, CaseIterable, Identifiable {
+enum Tee: String, CaseIterable, Identifiable, Equatable, Codable {
     case red = "Red"
     case yellow = "Yellow"
     case white = "White"
