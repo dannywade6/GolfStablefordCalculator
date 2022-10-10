@@ -35,42 +35,53 @@ struct PreviousRoundsView: View {
                                                 VStack {
                                                     Divider().padding(.vertical, 2)
                                                     HStack {
-                                                        
                                                         Text("Points:")
-                                                            .bold()
+                                                            .font(.title3)
+                                                        
+                                                        
+                                                        
                                                         Spacer()
-                                                        Text("\(round.points)")
-                                                            .bold()
+                                                        Text("\(round.points) Points")
+                                                            .foregroundColor(Color("grey1"))
                                                             .padding(3)
+                                                            .font(.headline)
+                                                            .fontWeight(.regular)
                                                     }
                                                     
                                                     Divider().padding(.vertical, 2)
                                                     HStack {
                                                         Text("Date:")
-                                                            .bold()
+                                                            .font(.title3)
+                                                        
                                                         Spacer()
                                                         
                                                         Text("\(round.date)")
+                                                            .foregroundColor(Color("grey1"))
                                                             .padding(3)
-                                                        //                                                        .bold()
+                                                            .font(.headline)
+                                                            .fontWeight(.regular)
+                                                            .padding(3)
                                                         
                                                     }
                                                     
                                                     Divider().padding(.vertical, 2)
                                                     HStack {
                                                         Text("Handicap:")
-                                                            .bold()
+                                                            .font(.title3)
+                                                        
                                                         Spacer()
                                                         Text("\(round.handicap)")
+                                                            .foregroundColor(Color("grey1"))
                                                             .padding(3)
-                                                        
+                                                            .font(.headline)
+                                                            .fontWeight(.regular)
                                                     }
                                                     
                                                     Divider().padding(.vertical, 2)
                                                     
                                                     HStack {
                                                         Text("Tee: ")
-                                                            .bold()
+                                                            .font(.title3)
                                                         
                                                         Spacer()
                                                         
@@ -82,19 +93,29 @@ struct PreviousRoundsView: View {
                                                 }
                                             }
                                         }, label: {
-                                            Text("\(round.courseName)")
-                                                .font(.title3)
-                                                .foregroundColor(.black)
-                                            Spacer()
-                                            Text("\(round.points) Points")
-                                                .font(.title2)
-                                                .bold()
-                                                .foregroundColor(.green)
-                                                .padding()
                                             
+                                            HStack {
+                                                VStack(alignment: .leading) {
+                                                    Text("\(round.courseName)")
+                                                        .font(.title2)
+                                                        .foregroundColor(Color("grey1"))
+                                                        .bold()
+                                                    
+                                                    Text("\(round.points) Points")
+                                                        .font(.title3)
+                                                        .foregroundColor(Color("green2"))
+                                                }
+                                                
+                                                Spacer()
+                                                Text("\(round.date)")
+                                                    .font(.title2)
+                                                    .foregroundColor(Color("green1"))
+                                                    .fontWeight(.semibold)
+                                                
+                                            }
                                         }
                                     )
-                                    .accentColor(.green)
+                                    .accentColor(Color("green2"))
                                     
                                 }
                                 .overlay(
@@ -107,22 +128,31 @@ struct PreviousRoundsView: View {
                             .padding(.horizontal, 15)
                         }
                     }
+                     
                     .navigationTitle("Previous Rounds")
-                    .navigationBarItems(trailing: EditButton().foregroundColor(.red))
+                    
+                    .navigationBarItems(trailing:
+                                            EditButton()
+                        .bold()
+                        .font(.headline)
+                        .foregroundColor(Color("grey1"))
+                    
+                    )
                     
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("Exit")
-                            .font(.headline)
+                            .foregroundColor(Color("red1"))
                             .fontWeight(.semibold)
-                            .foregroundColor(.red)
-                            .padding()
-                            .padding(.horizontal, 10)
-                            .background(
-                                Capsule()
-                                    .stroke(Color.red, lineWidth: 2.0))
+                            .font(.title3)
+                            .frame(width: 100, height: 53)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 18)
+                                    .strokeBorder(LinearGradient(colors: [Color("red2"), Color("red3")], startPoint: .leading, endPoint: .top), lineWidth: 1.5)
+                            )
                     })
+                    
                     .padding(10)
                 }
             }

@@ -43,28 +43,9 @@ struct HomeView: View {
                         }
                         .padding(.leading, 30)
                         Spacer()
-                        
                     }
                     
                     HStack {
-                        //                        Button {
-                        //                            showCreateScreen.toggle()
-                        //                        } label: {
-                        //                            Text("New Round")
-                        //                                .fontWeight(.semibold)
-                        //                                .foregroundColor(.white)
-                        //                                .font(.headline)
-                        //                                .fullScreenCover(isPresented: $showCreateScreen) {
-                        //                                    CreateNewRound()
-                        //                                }
-                        //
-                        //                                .frame(width: 162, height: 53)
-                        //                                .background(
-                        //                                    LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
-                        //                                .cornerRadius(18)
-                        //
-                        //
-                        //                        }
                         
                         Button {
                             print("NavigationLink to CreateNewRound()")
@@ -74,23 +55,17 @@ struct HomeView: View {
                                     .fontWeight(.semibold)
                                     .foregroundColor(.white)
                                     .font(.headline)
-                                //                                .fullScreenCover(isPresented: $showCreateScreen) {
-                                //                                    CreateNewRound()
-                                //                                }
                                     .frame(width: 162, height: 53)
                                     .background(
                                         LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
                                     .cornerRadius(18)
                             }
-                            
-                            
-                            
                         }
                         
                         Button {
                             showViewScreen.toggle()
                         } label: {
-                            Text("Previous Scores")
+                            Text("Previous Rounds")
                                 .foregroundColor(Color.black)
                                 .fontWeight(.semibold)
                                 .font(.headline)
@@ -98,15 +73,11 @@ struct HomeView: View {
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 18)
                                         .strokeBorder(LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top), lineWidth: 1.5))
-                            
                         }
                         .fullScreenCover(isPresented: $showViewScreen) {
                             PreviousRoundsView()
                         }
-                        
-                        
                     }
-                    
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
                             .foregroundColor(.white)
@@ -117,7 +88,6 @@ struct HomeView: View {
                             .padding(.top, 40)
                             .padding(.bottom, 100)
                     }
-                        
                 }
                 .toolbar {
                     Button {
@@ -131,7 +101,6 @@ struct HomeView: View {
             }
         }
     }
-    
 }
 
 struct HomeView_Previews: PreviewProvider {
