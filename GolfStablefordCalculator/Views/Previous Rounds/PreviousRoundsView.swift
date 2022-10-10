@@ -27,7 +27,7 @@ struct PreviousRoundsView: View {
                 VStack {
                     ScrollView {
                         VStack {
-                            ForEach(roundStorage.rounds, id: \.id) { round in
+                            ForEach(roundStorage.rounds) { round in
                                 GroupBox() {
                                     DisclosureGroup(
                                         content: {
@@ -74,9 +74,11 @@ struct PreviousRoundsView: View {
                                                         
                                                         Spacer()
                                                         
-                                                        Text(round.selectedTee.rawValue)
+                                                        RoundedRectangle(cornerRadius: 3)
+                                                            .foregroundColor(teeColor(color: round.selectedTee.rawValue))
+                                                            .frame(width: 25, height: 25)
+                                                            .shadow(radius: 2)
                                                     }
-//                                                                                              .frame(width: 25, height: 25)
                                                 }
                                             }
                                         }, label: {
@@ -122,16 +124,26 @@ struct PreviousRoundsView: View {
                                     .stroke(Color.red, lineWidth: 2.0))
                     })
                     .padding(10)
-                    
                 }
             }
         }
-        
     }
     
     func removeRows(at offsets: IndexSet) {
         withAnimation {
             roundStorage.rounds.remove(atOffsets: offsets)
+        }
+    }
+    
+    func teeColor(color: String) -> Color {
+        if color == "Red" {
+            return Color("teeRed1")
+        } else if color == "Yellow" {
+            return Color("teeYellow1")
+        } else if color == "White" {
+            return Color.white
+        } else {
+            return Color("teeBlue1")
         }
     }
 }

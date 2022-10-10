@@ -15,23 +15,12 @@ struct Round: Identifiable, Codable, Equatable {
     var handicap: Int
     var selectedTee: Tee
     
-//    var yellowTee: Bool = false
-//    var blueTee: Bool = false
-//    var whiteTee: Bool = false
-//    var redTee: Bool = false
-    
     init(points: Int, courseName: String, date: String, handicap: Int, selectedTee: Tee) {
         self.points = points
         self.courseName = courseName
         self.date = date
         self.handicap = handicap
         self.selectedTee = selectedTee
-        
-        
-//        self.yellowTee = yellowTee
-//        self.blueTee = blueTee
-//        self.whiteTee = whiteTee
-//        self.redTee = redTee
     }
 }
 

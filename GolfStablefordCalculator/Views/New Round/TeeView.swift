@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TeeView: View {
-    @StateObject var roundViewModel = RoundViewModel()
+//    @StateObject var roundViewModel = RoundViewModel()
+    @EnvironmentObject var roundViewModel: RoundViewModel
     
     var body: some View {
         HStack {
@@ -39,5 +40,6 @@ struct TeeView: View {
 struct TeeView_Previews: PreviewProvider {
     static var previews: some View {
         TeeView()
+            .environmentObject(RoundViewModel())
     }
 }
