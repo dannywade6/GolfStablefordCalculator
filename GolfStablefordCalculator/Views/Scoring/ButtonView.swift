@@ -15,6 +15,8 @@ struct ButtonView: View {
     @EnvironmentObject var roundStorage: RoundStorage
     @EnvironmentObject var roundViewModel: RoundViewModel
     
+    @State var showPreviousRoundsScreen:Bool = false
+    
     var body: some View {
         HStack {
             Spacer()
@@ -37,22 +39,42 @@ struct ButtonView: View {
             
             Spacer()
             
-            Button(action: {
+            Button {
                 roundStorage.rounds.append(Round(points: viewModel.totalScore, courseName: roundViewModel.courseName, date: roundViewModel.dateShortened(), handicap: viewModel.handicap, selectedTee: roundViewModel.selectedTee))
                 
-                self.presentationMode.wrappedValue.dismiss()
+                showPreviousRoundsScreen.toggle()
                 viewModel.whichHole = 1
                 viewModel.clearScore()
-            }, label: {
-                Text("Save Score")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .font(.title3)
-                    .frame(width: 159, height: 53)
-                    .background(
-                        LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
-                    .cornerRadius(18)
-            })
+            } label: {
+                    Text("Save Score")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .frame(width: 159, height: 53)
+                        .background(
+                            LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
+                        .cornerRadius(18)
+            }
+            .fullScreenCover(isPresented: $showPreviousRoundsScreen) {
+                PreviousRoundsView()
+            }
+            
+//            Button(action: {
+//                roundStorage.rounds.append(Round(points: viewModel.totalScore, courseName: roundViewModel.courseName, date: roundViewModel.dateShortened(), handicap: viewModel.handicap, selectedTee: roundViewModel.selectedTee))
+//
+//                self.presentationMode.wrappedValue.dismiss()
+//                viewModel.whichHole = 1
+//                viewModel.clearScore()
+//            }, label: {
+//                Text("Save Score")
+//                    .fontWeight(.semibold)
+//                    .foregroundColor(.white)
+//                    .font(.title3)
+//                    .frame(width: 159, height: 53)
+//                    .background(
+//                        LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
+//                    .cornerRadius(18)
+//            })
             .padding(.bottom)
 
                 Spacer()

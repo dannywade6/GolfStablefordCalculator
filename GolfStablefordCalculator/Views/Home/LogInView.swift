@@ -30,18 +30,18 @@ struct LogInView: View {
                 
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("Golf")
+                        Text("Stableford")
                             .font(.title)
                             .fontWeight(.light)
                             .padding(.trailing, -3)
-                        Text("Scoring")
+                        Text("Golf")
                             .font(.title)
                             .bold()
                             .overlay {
                                 LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top
                                 )
                                 .mask(
-                                    Text("Scoring")
+                                    Text("Golf")
                                         .font(.title)
                                         .bold()
                                 )
@@ -90,7 +90,7 @@ struct LogInView: View {
                 Spacer()
                 
                 VStack {
-                    Text("Golf Scoring")
+                    Text("Stableford Golf")
                     Text("Developed by Danny Wade")
                 }
                 .foregroundColor(Color("green1"))

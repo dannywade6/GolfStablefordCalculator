@@ -25,6 +25,8 @@
 		30541416289EF2A00029F792 /* PreviousRoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30541415289EF2A00029F792 /* PreviousRoundsView.swift */; };
 		3054141828A171AA0029F792 /* RoundData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141728A171AA0029F792 /* RoundData.swift */; };
 		3054141A28A174210029F792 /* RoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141928A174210029F792 /* RoundViewModel.swift */; };
+		3069B4B228F5F541008E90F3 /* RoundsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B4B128F5F541008E90F3 /* RoundsEmptyView.swift */; };
+		3069B4B428F5FCEB008E90F3 /* SingleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */; };
 		30A1E58128E880E300C11D43 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A1E58028E880E300C11D43 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		30541415289EF2A00029F792 /* PreviousRoundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousRoundsView.swift; sourceTree = "<group>"; };
 		3054141728A171AA0029F792 /* RoundData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundData.swift; sourceTree = "<group>"; };
 		3054141928A174210029F792 /* RoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewModel.swift; sourceTree = "<group>"; };
+		3069B4B128F5F541008E90F3 /* RoundsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsEmptyView.swift; sourceTree = "<group>"; };
+		3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRoundView.swift; sourceTree = "<group>"; };
 		30A1E58028E880E300C11D43 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +83,8 @@
 				30492D5B28EB7B2D006D4729 /* LogInView.swift */,
 				30A1E58028E880E300C11D43 /* HomeView.swift */,
 				30318A0528EB7796002AD72F /* HomeChartView.swift */,
+				3069B4B128F5F541008E90F3 /* RoundsEmptyView.swift */,
+				3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -249,8 +255,10 @@
 			files = (
 				30492D5C28EB7B2D006D4729 /* LogInView.swift in Sources */,
 				3030A91C28F0BC7D00929010 /* KeyboardResponder.swift in Sources */,
+				3069B4B228F5F541008E90F3 /* RoundsEmptyView.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
 				30A1E58128E880E300C11D43 /* HomeView.swift in Sources */,
+				3069B4B428F5FCEB008E90F3 /* SingleRoundView.swift in Sources */,
 				30500EFA289D86590076BB08 /* CreateNewRound.swift in Sources */,
 				3054141A28A174210029F792 /* RoundViewModel.swift in Sources */,
 				30500F05289D87070076BB08 /* RoundStorage.swift in Sources */,
@@ -396,7 +404,7 @@
 				DEVELOPMENT_TEAM = 9SLC94245Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Golf Scoring";
+				INFOPLIST_KEY_CFBundleDisplayName = "Stableford Golf";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -427,7 +435,7 @@
 				DEVELOPMENT_TEAM = 9SLC94245Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Golf Scoring";
+				INFOPLIST_KEY_CFBundleDisplayName = "Stableford Golf";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

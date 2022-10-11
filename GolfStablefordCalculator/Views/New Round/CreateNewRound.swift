@@ -90,7 +90,8 @@ struct NewRoundContent: View {
                         .padding()
                     TextField("Augusta National (Ga.) G.C.",
                               text: $roundViewModel.courseName)
-                    .foregroundColor(Color(UIColor(red: 0.47, green: 0.51, blue: 0.54, alpha: 1)))
+//                    .foregroundColor(Color(UIColor(red: 0.47, green: 0.51, blue: 0.54, alpha: 1)))
+                    .foregroundColor(Color("text2"))
                     .submitLabel(.done)
                 }
                 

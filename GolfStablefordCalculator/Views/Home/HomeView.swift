@@ -12,6 +12,8 @@ struct HomeView: View {
     @State var showCreateScreen:Bool = false
     @State var showViewScreen:Bool = false
     
+    @EnvironmentObject var roundStorage: RoundStorage
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -83,11 +85,25 @@ struct HomeView: View {
                             .foregroundColor(.white)
                             .padding(.top)
                             .padding(.horizontal)
-                        HomeChartView()
-                            .frame(width: 350, height: 400)
-                            .padding(.top, 40)
-                            .padding(.bottom, 100)
+                        
+                        if roundStorage.rounds.isEmpty {
+                            RoundsEmptyView()
+                                .frame(width: 350, height: 400)
+                                .padding(.top, 40)
+                                .padding(.bottom, 100)
+                        } else if roundStorage.rounds.count == 1 {
+                            SingleRoundView()
+                                .frame(width: 350, height: 400)
+                                .padding(.top, 40)
+                                .padding(.bottom, 100)
+                        } else {
+                            HomeChartView()
+                                .frame(width: 350, height: 400)
+                                .padding(.top, 40)
+                                .padding(.bottom, 100)
+                        }
                     }
+                    
                 }
                 .toolbar {
                     Button {
@@ -100,7 +116,9 @@ struct HomeView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
+        
 }
 
 struct HomeView_Previews: PreviewProvider {

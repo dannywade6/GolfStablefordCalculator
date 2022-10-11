@@ -18,7 +18,6 @@ class RoundViewModel: ObservableObject {
         let initialDate = date
         let formatter1 = DateFormatter()
         formatter1.dateStyle = .short
-        
         return formatter1.string(from: initialDate)
     }
 }
