@@ -12,7 +12,6 @@
 		3000506C27EA772700E45FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506B27EA772700E45FF8 /* Assets.xcassets */; };
 		3000506F27EA772700E45FF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3000506E27EA772700E45FF8 /* Preview Assets.xcassets */; };
 		3030A91C28F0BC7D00929010 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030A91B28F0BC7D00929010 /* KeyboardResponder.swift */; };
-		3030A91E28F0C81B00929010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3030A91D28F0C81B00929010 /* LaunchScreen.storyboard */; };
 		30318A0628EB7796002AD72F /* HomeChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30318A0528EB7796002AD72F /* HomeChartView.swift */; };
 		30492D5C28EB7B2D006D4729 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30492D5B28EB7B2D006D4729 /* LogInView.swift */; };
 		30500EF4289D86230076BB08 /* HoleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30500EF3289D86230076BB08 /* HoleData.swift */; };
@@ -27,6 +26,7 @@
 		3054141A28A174210029F792 /* RoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141928A174210029F792 /* RoundViewModel.swift */; };
 		3069B4B228F5F541008E90F3 /* RoundsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B4B128F5F541008E90F3 /* RoundsEmptyView.swift */; };
 		3069B4B428F5FCEB008E90F3 /* SingleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */; };
+		3069B4B828F60827008E90F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3069B4B728F60827008E90F3 /* LaunchScreen.storyboard */; };
 		30A1E58128E880E300C11D43 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A1E58028E880E300C11D43 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,6 @@
 		3000506B27EA772700E45FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3000506E27EA772700E45FF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3030A91B28F0BC7D00929010 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
-		3030A91D28F0C81B00929010 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30318A0528EB7796002AD72F /* HomeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChartView.swift; sourceTree = "<group>"; };
 		30492D5B28EB7B2D006D4729 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		30500EF3289D86230076BB08 /* HoleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleData.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		3054141928A174210029F792 /* RoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewModel.swift; sourceTree = "<group>"; };
 		3069B4B128F5F541008E90F3 /* RoundsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsEmptyView.swift; sourceTree = "<group>"; };
 		3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRoundView.swift; sourceTree = "<group>"; };
+		3069B4B728F60827008E90F3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30A1E58028E880E300C11D43 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +79,7 @@
 		0014682528EEE1A2001A3EB7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3030A91D28F0C81B00929010 /* LaunchScreen.storyboard */,
+				3069B4B728F60827008E90F3 /* LaunchScreen.storyboard */,
 				30492D5B28EB7B2D006D4729 /* LogInView.swift */,
 				30A1E58028E880E300C11D43 /* HomeView.swift */,
 				30318A0528EB7796002AD72F /* HomeChartView.swift */,
@@ -240,7 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3030A91E28F0C81B00929010 /* LaunchScreen.storyboard in Resources */,
+				3069B4B828F60827008E90F3 /* LaunchScreen.storyboard in Resources */,
 				3000506F27EA772700E45FF8 /* Preview Assets.xcassets in Resources */,
 				3000506C27EA772700E45FF8 /* Assets.xcassets in Resources */,
 			);
@@ -409,6 +409,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -440,6 +441,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
