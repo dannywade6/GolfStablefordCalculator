@@ -14,11 +14,12 @@ class RoundViewModel: ObservableObject {
     @Published var points: Int = 0
     @Published var selectedTee: Tee = .red
     
+    let dateFormatter = DateFormatter()
+    
     func dateShortened() -> String {
         let initialDate = date
-        let formatter1 = DateFormatter()
-        formatter1.dateStyle = .short
-        return formatter1.string(from: initialDate)
+        dateFormatter.dateStyle = .short
+        return dateFormatter.string(from: initialDate)
     }
 }
 
