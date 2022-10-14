@@ -140,24 +140,23 @@ struct PreviousRoundsView: View {
                             .foregroundColor(Color("grey1"))
                                             
                         )
-                        
-                        Button {
-                            print("NavigationLink to HomeView()")
-                        } label: {
-                            NavigationLink(destination: HomeView()) {
-                                Text("Exit")
-                                    .foregroundColor(Color("red1"))
-                                    .fontWeight(.semibold)
-                                    .font(.title3)
-                                    .frame(width: 100, height: 53)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 18)
-                                            .strokeBorder(LinearGradient(colors: [Color("red2"), Color("red3")], startPoint: .leading, endPoint: .top), lineWidth: 1.5)
-                                    )
-                            }
-                        }
-                        .padding(10)
                     }
+                    Button {
+                        print("NavigationLink to HomeView()")
+                    } label: {
+                        NavigationLink(destination: HomeView()) {
+                            Text("Exit")
+                                .foregroundColor(Color("red1"))
+                                .fontWeight(.semibold)
+                                .font(.title3)
+                                .frame(width: 100, height: 53)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 18)
+                                        .strokeBorder(LinearGradient(colors: [Color("red2"), Color("red3")], startPoint: .leading, endPoint: .top), lineWidth: 1.5)
+                                )
+                        }
+                    }
+                    .padding(10)
                 }
             }
         }
