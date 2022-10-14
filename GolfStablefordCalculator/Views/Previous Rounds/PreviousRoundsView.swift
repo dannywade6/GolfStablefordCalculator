@@ -18,7 +18,6 @@ struct PreviousRoundsView: View {
         
         NavigationView {
             ZStack {
-            
                 LinearGradient(colors: [Color("backgroundgradient1"), Color("backgroundgradient2")], startPoint: .topLeading, endPoint: .bottomTrailing)
                     .opacity(0.1)
                     .ignoresSafeArea()
@@ -27,131 +26,138 @@ struct PreviousRoundsView: View {
                 VStack {
                     ScrollView {
                         VStack {
-                            ForEach(roundStorage.rounds) { round in
-                                GroupBox() {
-                                    DisclosureGroup(
-                                        content: {
-                                            VStack {
+                            if roundStorage.rounds.isEmpty {
+                                RoundsEmptyView()
+                                    .frame(width: 350, height: 400)
+                                    .padding(.top, 40)
+                                    .padding(.bottom, 100)
+                            } else {
+                                ForEach(roundStorage.rounds) { round in
+                                    GroupBox() {
+                                        DisclosureGroup(
+                                            content: {
                                                 VStack {
-                                                    Divider().padding(.vertical, 2)
-                                                    HStack {
-                                                        Text("Points:")
-                                                            .font(.title3)
-                                                        Spacer()
+                                                    VStack {
+                                                        Divider().padding(.vertical, 2)
+                                                        HStack {
+                                                            Text("Points:")
+                                                                .font(.title3)
+                                                            Spacer()
+                                                            Text("\(round.points) Points")
+                                                                .foregroundColor(Color("grey1"))
+                                                                .padding(3)
+                                                                .font(.headline)
+                                                                .fontWeight(.regular)
+                                                        }
+                                                        
+                                                        Divider().padding(.vertical, 2)
+                                                        HStack {
+                                                            Text("Date:")
+                                                                .font(.title3)
+                                                            
+                                                            Spacer()
+                                                            
+                                                            Text("\(round.date)")
+                                                                .foregroundColor(Color("grey1"))
+                                                                .padding(3)
+                                                                .font(.headline)
+                                                                .fontWeight(.regular)
+                                                                .padding(3)
+                                                            
+                                                        }
+                                                        
+                                                        Divider().padding(.vertical, 2)
+                                                        HStack {
+                                                            Text("Handicap:")
+                                                                .font(.title3)
+                                                            
+                                                            Spacer()
+                                                            Text("\(round.handicap)")
+                                                                .foregroundColor(Color("grey1"))
+                                                                .padding(3)
+                                                                .font(.headline)
+                                                                .fontWeight(.regular)
+                                                        }
+                                                        
+                                                        Divider().padding(.vertical, 2)
+                                                        
+                                                        HStack {
+                                                            Text("Tee: ")
+                                                                .font(.title3)
+                                                            
+                                                            Spacer()
+                                                            
+                                                            RoundedRectangle(cornerRadius: 3)
+                                                                .foregroundColor(teeColor(color: round.selectedTee.rawValue))
+                                                                .frame(width: 25, height: 25)
+                                                                .shadow(radius: 2)
+                                                        }
+                                                    }
+                                                }
+                                            }, label: {
+                                                
+                                                HStack {
+                                                    VStack(alignment: .leading) {
+                                                        Text("\(round.courseName)")
+                                                            .font(.title2)
+                                                            .foregroundColor(Color("grey1"))
+                                                            .bold()
+                                                        
                                                         Text("\(round.points) Points")
-                                                            .foregroundColor(Color("grey1"))
-                                                            .padding(3)
-                                                            .font(.headline)
-                                                            .fontWeight(.regular)
-                                                    }
-                                                    
-                                                    Divider().padding(.vertical, 2)
-                                                    HStack {
-                                                        Text("Date:")
                                                             .font(.title3)
-                                                        
-                                                        Spacer()
-                                                        
-                                                        Text("\(round.date)")
-                                                            .foregroundColor(Color("grey1"))
-                                                            .padding(3)
-                                                            .font(.headline)
-                                                            .fontWeight(.regular)
-                                                            .padding(3)
-                                                        
+                                                            .foregroundColor(Color("green2"))
                                                     }
                                                     
-                                                    Divider().padding(.vertical, 2)
-                                                    HStack {
-                                                        Text("Handicap:")
-                                                            .font(.title3)
-                                                        
-                                                        Spacer()
-                                                        Text("\(round.handicap)")
-                                                            .foregroundColor(Color("grey1"))
-                                                            .padding(3)
-                                                            .font(.headline)
-                                                            .fontWeight(.regular)
-                                                    }
-                                                    
-                                                    Divider().padding(.vertical, 2)
-                                                    
-                                                    HStack {
-                                                        Text("Tee: ")
-                                                            .font(.title3)
-                                                        
-                                                        Spacer()
-                                                        
-                                                        RoundedRectangle(cornerRadius: 3)
-                                                            .foregroundColor(teeColor(color: round.selectedTee.rawValue))
-                                                            .frame(width: 25, height: 25)
-                                                            .shadow(radius: 2)
-                                                    }
-                                                }
-                                            }
-                                        }, label: {
-                                            
-                                            HStack {
-                                                VStack(alignment: .leading) {
-                                                    Text("\(round.courseName)")
+                                                    Spacer()
+                                                    Text("\(round.date)")
                                                         .font(.title2)
-                                                        .foregroundColor(Color("grey1"))
-                                                        .bold()
+                                                        .foregroundColor(Color("green1"))
+                                                        .fontWeight(.semibold)
                                                     
-                                                    Text("\(round.points) Points")
-                                                        .font(.title3)
-                                                        .foregroundColor(Color("green2"))
                                                 }
-                                                
-                                                Spacer()
-                                                Text("\(round.date)")
-                                                    .font(.title2)
-                                                    .foregroundColor(Color("green1"))
-                                                    .fontWeight(.semibold)
-                                                
                                             }
-                                        }
-                                    )
-                                    .accentColor(Color("green2"))
+                                        )
+                                        .accentColor(Color("green2"))
+                                        
+                                    }
+                                    .overlay(
+                                        DeleteButton(round: round, rounds: $roundStorage.rounds, onDelete: removeRows)
+                                        , alignment: .topTrailing)
                                     
                                 }
-                                .overlay(
-                                    DeleteButton(round: round, rounds: $roundStorage.rounds, onDelete: removeRows)
-                                    , alignment: .topTrailing)
-                                
+                                .onDelete(perform: removeRows)
+                                .padding(.vertical, 7)
+                                .padding(.horizontal, 15)
                             }
-                            .onDelete(perform: removeRows)
-                            .padding(.vertical, 7)
-                            .padding(.horizontal, 15)
                         }
-                    }
-                     
-                    .navigationTitle("Previous Rounds")
-                    
-                    .navigationBarItems(trailing:
-                                            EditButton()
-                        .bold()
-                        .font(.headline)
-                        .foregroundColor(Color("grey1"))
-                    
-                    )
-                    
-                    Button {
-                        print("NavigationLink to HomeView()")
-                    } label: {
-                        NavigationLink(destination: HomeView()) {
-                            Text("Exit")
-                                .foregroundColor(Color("red1"))
-                                .fontWeight(.semibold)
-                                .font(.title3)
-                                .frame(width: 100, height: 53)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 18)
-                                        .strokeBorder(LinearGradient(colors: [Color("red2"), Color("red3")], startPoint: .leading, endPoint: .top), lineWidth: 1.5)
-                                )
+                        
+                        .navigationTitle("Previous Rounds")
+                        
+                        .navigationBarItems(trailing:
+                                                EditButton()
+                            .bold()
+                            .font(.headline)
+                            .foregroundColor(Color("grey1"))
+                                            
+                        )
+                        
+                        Button {
+                            print("NavigationLink to HomeView()")
+                        } label: {
+                            NavigationLink(destination: HomeView()) {
+                                Text("Exit")
+                                    .foregroundColor(Color("red1"))
+                                    .fontWeight(.semibold)
+                                    .font(.title3)
+                                    .frame(width: 100, height: 53)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 18)
+                                            .strokeBorder(LinearGradient(colors: [Color("red2"), Color("red3")], startPoint: .leading, endPoint: .top), lineWidth: 1.5)
+                                    )
+                            }
                         }
+                        .padding(10)
                     }
-                    .padding(10)
                 }
             }
         }

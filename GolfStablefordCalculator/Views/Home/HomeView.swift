@@ -68,7 +68,7 @@ struct HomeView: View {
                             showViewScreen.toggle()
                         } label: {
                             Text("Previous Rounds")
-                                .foregroundColor(Color.black)
+                                .foregroundColor(Color("text3"))
                                 .fontWeight(.semibold)
                                 .font(.headline)
                                 .frame(width: 162, height: 53)
@@ -82,7 +82,7 @@ struct HomeView: View {
                     }
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color("frameBackground1"))
                             .padding(.top)
                             .padding(.horizontal)
                         

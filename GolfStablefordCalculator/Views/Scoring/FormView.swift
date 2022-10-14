@@ -65,7 +65,6 @@ struct FormView: View {
                                     Text("Playing Handicap: \(viewModel.handicap)")
                                         .font(.body)
                                         .foregroundColor(Color("grey1"))
-                                        .padding(.bottom, 20)
                                         
                                     Spacer()
                                 }
@@ -81,7 +80,7 @@ struct FormView: View {
                                             .bold()
                                             .font(.title3)
                                             .foregroundColor(Color("grey1"))
-//                                            .padding()
+                                            .padding()
                                         
                                         Spacer()
                                         
@@ -104,7 +103,8 @@ struct FormView: View {
                                             Text("Par 5").tag(5)
                                         })
                                         .pickerStyle(.segmented)
-                                        .frame(width: 250, height: 55)
+                                        .frame(width: 250, height: 35)
+                                        .padding()
 
 
                                     }
@@ -114,7 +114,6 @@ struct FormView: View {
                                 VStack {
                                     Divider()
                                         .padding()
-                                    
                                     
                                     HStack {
                                         Text("Stroke Index")
@@ -146,7 +145,7 @@ struct FormView: View {
                                             .foregroundColor(Color("grey1"))
                                             .padding()
                                         Stepper("\(viewModel.allHoles[viewModel.whichHole - 1].strokesPlayed)", value: $viewModel.allHoles[viewModel.whichHole - 1].strokesPlayed, in: 1...11)
-                                            .frame(width: 130, height: 60)
+                                            .frame(width: 130, height: 40)
                                     }
                                     Spacer()
                                     Divider()

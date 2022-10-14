@@ -90,13 +90,12 @@ struct NewRoundContent: View {
                         .padding()
                     TextField("Augusta National (Ga.) G.C.",
                               text: $roundViewModel.courseName)
-//                    .foregroundColor(Color(UIColor(red: 0.47, green: 0.51, blue: 0.54, alpha: 1)))
                     .foregroundColor(Color("text2"))
                     .submitLabel(.done)
                 }
                 
                 .frame(width: 327, height: 62)
-                .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color("frameBackground1")))
                 .shadow(radius: 0.5)
                 
             }
@@ -124,7 +123,7 @@ struct NewRoundContent: View {
                 }
                 .accentColor(Color("green1"))
                 .frame(width: 327, height: 62)
-                .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color("frameBackground1")))
                 .shadow(radius: 0.5)
                 
                 //MARK: - Handicap
@@ -146,7 +145,7 @@ struct NewRoundContent: View {
                     .padding(.horizontal)
                 }
                 .frame(width: 327, height: 84)
-                .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color("frameBackground1")))
                 .shadow(radius: 0.5)
                 .pickerStyle(.wheel)
                 .clipped()
