@@ -222,9 +222,6 @@ struct NewRoundButtons: View {
                         )
                 }
                 .padding(.bottom, 15)
-//                .fullScreenCover(isPresented: $showHomeScreen) {
-//                    HomeView()
-//                }
             }
         }
         .offset(y: keyboardResponder.currentHeight*3)

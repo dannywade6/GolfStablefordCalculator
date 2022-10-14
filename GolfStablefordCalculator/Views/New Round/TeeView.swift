@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TeeView: View {
-//    @StateObject var roundViewModel = RoundViewModel()
     @EnvironmentObject var roundViewModel: RoundViewModel
     
     var body: some View {
