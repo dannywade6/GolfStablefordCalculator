@@ -21,7 +21,7 @@ struct HomeChartView: View {
                 .bold()
                 .padding(.bottom)
             Chart {
-                ForEach(roundStorage.rounds) {
+                ForEach(roundStorage.rounds.suffix(5)) {
                     LineMark (
                         x: .value("Date", $0.date),
                         y: .value("Score", $0.points))
