@@ -6,8 +6,18 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LogInView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
+    @AppStorage("email") var email: String = ""
+    @AppStorage("firstName") var firstName: String = ""
+    @AppStorage("surname") var surname: String = ""
+    @AppStorage("userId") var userId: String = ""
+    
+    
     var body: some View {
         ZStack {
             
@@ -18,12 +28,12 @@ struct LogInView: View {
             VStack {
                 Spacer()
                 Image("AppIconLogin")
-                    
+                
                     .resizable()
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .frame(width: 150)
-                    
+                
                     .shadow(radius: 10)
                 
                 Spacer()
@@ -45,48 +55,60 @@ struct LogInView: View {
                                         .font(.title)
                                         .bold()
                                 )
-                        }
+                            }
                     }
                 }
                 
                 VStack {
-                    VStack {
+                    
+                    
+                    Text("Sign in to continue:")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .padding(.top, -8.0)
+                        .padding(.bottom, 30)
+                    
+                    SignInWithAppleButton(.continue) { request in
+                        
+                        request.requestedScopes = [.email, .fullName]
+                        
+                    } onCompletion: { result in
+                        
+                        switch result {
+                        case .success(let auth):
                             
-                        Text("Sign in to continue:")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .padding(.top, -8.0)
+                            switch auth.credential {
+                            case let credential as ASAuthorizationAppleIDCredential:
+                                
+                                // User ID
+                                let userID = credential.user
+                                
+                                //User Info
+                                let email = credential.email
+                                let firstName = credential.fullName?.givenName
+                                let surname = credential.fullName?.familyName
+                                
+                                self.email = email ?? ""
+                                self.userId = userID
+                                self.firstName = firstName ?? ""
+                                self.surname = surname ?? ""
+                                
+                            default:
+                                break
+                            }
+                        case .failure(let error):
+                            print(error)
+                        }
+                        
                     }
-                    .padding(.bottom, 30)
-
-                    
-                    HStack {
-                        Image(systemName: "applelogo")
-                        Text("Continue with Apple")
-                    }
-                    .font(.callout)
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 10)
+                    .signInWithAppleButtonStyle(
+                        colorScheme == .dark ? .white : .black
+                    )
                     .frame(width: 200, height: 50)
-                    .background(Color.white)
-                    .cornerRadius(7)
-                    .shadow(radius: 10)
-                    .padding(.bottom, 10)
-                    
-                    HStack {
-                        Image(systemName: "applelogo")
-                        Text("Sign up with Apple")
-                    }
-                    .font(.callout)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 10)
-                    .frame(width: 200, height: 50)
-                    .background(Color.black)
                     .cornerRadius(7)
                     .shadow(radius: 10)
                 }
-
+                
                 Spacer()
                 
                 VStack {
@@ -95,7 +117,7 @@ struct LogInView: View {
                 }
                 .foregroundColor(Color("green1"))
                 .font(.caption2)
-                    
+                
             }
         }
     }

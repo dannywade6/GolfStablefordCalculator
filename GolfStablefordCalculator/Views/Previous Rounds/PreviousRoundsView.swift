@@ -32,7 +32,7 @@ struct PreviousRoundsView: View {
                                     .padding(.top, 40)
                                     .padding(.bottom, 100)
                             } else {
-                                ForEach(roundStorage.rounds) { round in
+                                ForEach(roundStorage.rounds.reversed()) { round in
                                     GroupBox() {
                                         DisclosureGroup(
                                             content: {

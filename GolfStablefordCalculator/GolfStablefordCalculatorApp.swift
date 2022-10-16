@@ -11,6 +11,7 @@ import SwiftUI
 struct StablefordSandboxApp: App {
     var body: some Scene {
         WindowGroup {
+//            SignIn()
             HomeView()
                 .environmentObject(HoleViewModel())
                 .environmentObject(RoundStorage())

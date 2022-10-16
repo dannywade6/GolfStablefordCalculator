@@ -28,6 +28,7 @@
 		3069B4B428F5FCEB008E90F3 /* SingleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */; };
 		3069B4BA28F60C0A008E90F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3069B4B928F60C0A008E90F3 /* LaunchScreen.storyboard */; };
 		30A1E58128E880E300C11D43 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A1E58028E880E300C11D43 /* HomeView.swift */; };
+		30C9924528FB1FE40024BF29 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C9924428FB1FE40024BF29 /* SignIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfStablefordCalculatorApp.swift; sourceTree = "<group>"; };
 		3000506B27EA772700E45FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3000506E27EA772700E45FF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		300D7BE928FB1ABC00616F3F /* GolfStablefordCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GolfStablefordCalculator.entitlements; sourceTree = "<group>"; };
 		3030A91B28F0BC7D00929010 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		30318A0528EB7796002AD72F /* HomeChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChartView.swift; sourceTree = "<group>"; };
 		30492D5B28EB7B2D006D4729 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRoundView.swift; sourceTree = "<group>"; };
 		3069B4B928F60C0A008E90F3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30A1E58028E880E300C11D43 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		30C9924428FB1FE40024BF29 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 				30318A0528EB7796002AD72F /* HomeChartView.swift */,
 				3069B4B128F5F541008E90F3 /* RoundsEmptyView.swift */,
 				3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */,
+				30C9924428FB1FE40024BF29 /* SignIn.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -108,6 +112,7 @@
 		3000506627EA772600E45FF8 /* GolfStablefordCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				300D7BE928FB1ABC00616F3F /* GolfStablefordCalculator.entitlements */,
 				3000506727EA772600E45FF8 /* GolfStablefordCalculatorApp.swift */,
 				30500EF0289D85ED0076BB08 /* Model */,
 				30500EF2289D85FC0076BB08 /* Views */,
@@ -263,6 +268,7 @@
 				3054141A28A174210029F792 /* RoundViewModel.swift in Sources */,
 				30500F05289D87070076BB08 /* RoundStorage.swift in Sources */,
 				0014682328EECF5C001A3EB7 /* TeeView.swift in Sources */,
+				30C9924528FB1FE40024BF29 /* SignIn.swift in Sources */,
 				30500F00289D867A0076BB08 /* ButtonView.swift in Sources */,
 				30500EFE289D86710076BB08 /* FormView.swift in Sources */,
 				30500EF4289D86230076BB08 /* HoleData.swift in Sources */,
@@ -398,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GolfStablefordCalculator/GolfStablefordCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GolfStablefordCalculator/Preview Content\"";
@@ -430,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GolfStablefordCalculator/GolfStablefordCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GolfStablefordCalculator/Preview Content\"";
