@@ -39,11 +39,12 @@ struct HomeView: View {
                                     )
                                 }
                             
-                            Text("Welcome Danny")
-                                .font(.title)
+                            Text("Welcome to StablefordGolf")
+                                .font(.title2)
                                 .fontWeight(.regular)
                         }
                         .padding(.leading, 30)
+                        .padding(.top, 30§)
                         Spacer()
                     }
                     
@@ -105,15 +106,15 @@ struct HomeView: View {
                     }
                     
                 }
-                .toolbar {
-                    Button {
-                        print("iCloud Profile")
-                    } label: {
-                        Image(systemName: "person.crop.circle.fill")
-                            .foregroundColor(Color("green1"))
-                            .font(.title3)
-                    }
-                }
+//                .toolbar {
+//                    Button {
+//                        print("iCloud Profile")
+//                    } label: {
+//                        Image(systemName: "person.crop.circle.fill")
+//                            .foregroundColor(Color("green1"))
+//                            .font(.title3)
+//                    }
+//                }
             }
         }
         .navigationBarBackButtonHidden(true)

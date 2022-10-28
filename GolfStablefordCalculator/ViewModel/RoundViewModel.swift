@@ -22,6 +22,15 @@ class RoundViewModel: ObservableObject {
         return dateFormatter.string(from: initialDate)
     }
 }
+//
+//extension Date {
+//    static var dateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .short
+//        return formatter
+//    }()
+//}
+
 
 enum Tee: String, CaseIterable, Identifiable, Equatable, Codable {
     case red = "Red"
