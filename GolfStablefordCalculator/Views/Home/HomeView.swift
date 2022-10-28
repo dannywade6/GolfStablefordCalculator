@@ -44,7 +44,7 @@ struct HomeView: View {
                                 .fontWeight(.regular)
                         }
                         .padding(.leading, 30)
-                        .padding(.top, 30§)
+                        .padding(.top, 30)
                         Spacer()
                     }
                     
