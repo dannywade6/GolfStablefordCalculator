@@ -138,7 +138,7 @@ struct NewRoundContent: View {
                 
                 HStack {
                     Picker("Handicap", selection: $viewModel.handicap) {
-                        ForEach(0...28, id:\.self) { handicap in
+                        ForEach(0...54, id:\.self) { handicap in
                             Text("\(handicap)")
                         }
                     }
