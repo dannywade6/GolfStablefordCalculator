@@ -180,6 +180,11 @@ struct NewRoundButtons: View {
     
     @State var showScoringSheet: Bool = false
     @State var showHomeScreen: Bool = false
+    
+    @State var showAlert: Bool = false
+    
+    @EnvironmentObject var roundViewModel: RoundViewModel
+    
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var keyboardResponder = KeyboardResponder()
@@ -188,7 +193,12 @@ struct NewRoundButtons: View {
         VStack {
             VStack {
                 Button {
-                    showScoringSheet.toggle()
+                    
+                    if roundViewModel.courseName.count <= 3 {
+                        showAlert = true
+                    } else {
+                        showScoringSheet.toggle()
+                    }
                 } label: {
                     HStack {
                         Image(systemName: "star.circle")
@@ -203,6 +213,10 @@ struct NewRoundButtons: View {
                     .background(
                         LinearGradient(colors: [Color("green2"), Color("green1")], startPoint: .leading, endPoint: .top))
                     .cornerRadius(18)
+                    
+                }
+                .alert("Please enter a golf course name!", isPresented: $showAlert) {
+                    Button("OK", role: .cancel) { }
                 }
                 .fullScreenCover(isPresented: $showScoringSheet) {
                     FormView()
@@ -226,4 +240,5 @@ struct NewRoundButtons: View {
         }
         .offset(y: keyboardResponder.currentHeight*3)
     }
+    
 }
