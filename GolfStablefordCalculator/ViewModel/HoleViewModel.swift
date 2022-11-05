@@ -64,59 +64,14 @@ class HoleViewModel: ObservableObject {
     
     func holeScore(forHoleNumber holeNumber: Int) -> Int {
         
-        var net: Int = 0
-        var points: Int = 0
-        
-        
-        if handicap <= 18 {
-            if handicap - allHoles[whichHole - 1].strokeIndex >= 0 {
-                net = (allHoles[whichHole - 1].strokesPlayed - 1)
-            }
-            else {
-                net = allHoles[whichHole - 1].strokesPlayed
-            }
-        }
-
-        if handicap > 18 {
-            if (handicap - 18) - allHoles[whichHole - 1].strokeIndex >= 0 {
-                net = (allHoles[whichHole - 1].strokesPlayed - 2)
-            }
-            else {
-                net = (allHoles[whichHole - 1].strokesPlayed - 1)
-            }
-        }
-
-        switch net {
-        case _ where net >= allHoles[whichHole - 1].par + 2:
-            points = 0
-
-        case _ where net == allHoles[whichHole - 1].par + 1:
-            points = 1
-
-        case _ where net == allHoles[whichHole - 1].par:
-            points = 2
-
-        case _ where net == allHoles[whichHole - 1].par - 1:
-            points = 3
-
-        case _ where net == allHoles[whichHole - 1].par - 2:
-            points = 4
-
-        case _ where net == allHoles[whichHole - 1].par - 3:
-            points = 5
-
-        case _ where net == allHoles[whichHole - 1].par - 4:
-            points = 6
-
-        default:
-            points = 0
-            
-        }
+        let differential: Int = handicap % 18 >= allHoles[whichHole - 1].strokeIndex ? 1 : 0
+        let points: Int = allHoles[whichHole - 1].par + 2 - allHoles[whichHole - 1].strokesPlayed + differential + handicap / 18
+       
         let holeToUpdate = allHoles.first(where: { hole in
             hole.holeNumber == holeNumber
         })
         holeToUpdate?.points = points
         
-        return points
+        return points < 0 ? 0 : points
     }
 }
