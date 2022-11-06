@@ -81,6 +81,9 @@ struct HomeView: View {
                             PreviousRoundsView()
                         }
                     }
+                    .onAppear {
+                        AppReviewRequest.requestReviewIfNeeded()
+                    }
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
                             .foregroundColor(Color("frameBackground1"))
@@ -105,18 +108,13 @@ struct HomeView: View {
                         }
                     }
                     
+                    
                 }
-//                .toolbar {
-//                    Button {
-//                        print("iCloud Profile")
-//                    } label: {
-//                        Image(systemName: "person.crop.circle.fill")
-//                            .foregroundColor(Color("green1"))
-//                            .font(.title3)
-//                    }
-//                }
+                
             }
+            
         }
+        
         .navigationBarBackButtonHidden(true)
     }
         

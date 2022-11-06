@@ -24,6 +24,7 @@
 		30541416289EF2A00029F792 /* PreviousRoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30541415289EF2A00029F792 /* PreviousRoundsView.swift */; };
 		3054141828A171AA0029F792 /* RoundData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141728A171AA0029F792 /* RoundData.swift */; };
 		3054141A28A174210029F792 /* RoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3054141928A174210029F792 /* RoundViewModel.swift */; };
+		305C691B29184B23007BC4EA /* AppReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305C691A29184B23007BC4EA /* AppReviewRequest.swift */; };
 		3069B4B228F5F541008E90F3 /* RoundsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B4B128F5F541008E90F3 /* RoundsEmptyView.swift */; };
 		3069B4B428F5FCEB008E90F3 /* SingleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */; };
 		3069B4BA28F60C0A008E90F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3069B4B928F60C0A008E90F3 /* LaunchScreen.storyboard */; };
@@ -51,6 +52,7 @@
 		30541415289EF2A00029F792 /* PreviousRoundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousRoundsView.swift; sourceTree = "<group>"; };
 		3054141728A171AA0029F792 /* RoundData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundData.swift; sourceTree = "<group>"; };
 		3054141928A174210029F792 /* RoundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundViewModel.swift; sourceTree = "<group>"; };
+		305C691A29184B23007BC4EA /* AppReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewRequest.swift; sourceTree = "<group>"; };
 		3069B4B128F5F541008E90F3 /* RoundsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsEmptyView.swift; sourceTree = "<group>"; };
 		3069B4B328F5FCEB008E90F3 /* SingleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRoundView.swift; sourceTree = "<group>"; };
 		3069B4B928F60C0A008E90F3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				30500EF0289D85ED0076BB08 /* Model */,
 				30500EF2289D85FC0076BB08 /* Views */,
 				30500EF1289D85F40076BB08 /* ViewModel */,
+				305C691D29184BAA007BC4EA /* AppReview */,
 				30500F03289D86F70076BB08 /* Persistance */,
 				3000506B27EA772700E45FF8 /* Assets.xcassets */,
 				3000506D27EA772700E45FF8 /* Preview Content */,
@@ -185,6 +188,14 @@
 				30500F04289D87070076BB08 /* RoundStorage.swift */,
 			);
 			path = Persistance;
+			sourceTree = "<group>";
+		};
+		305C691D29184BAA007BC4EA /* AppReview */ = {
+			isa = PBXGroup;
+			children = (
+				305C691A29184B23007BC4EA /* AppReviewRequest.swift */,
+			);
+			path = AppReview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30492D5C28EB7B2D006D4729 /* LogInView.swift in Sources */,
+				305C691B29184B23007BC4EA /* AppReviewRequest.swift in Sources */,
 				3030A91C28F0BC7D00929010 /* KeyboardResponder.swift in Sources */,
 				3069B4B228F5F541008E90F3 /* RoundsEmptyView.swift in Sources */,
 				3000506827EA772600E45FF8 /* GolfStablefordCalculatorApp.swift in Sources */,
@@ -424,7 +436,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DannyWade.GolfStablefordCalculator;
 				PRODUCT_NAME = "Stableford Calculator";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -461,7 +473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.DannyWade.GolfStablefordCalculator;
 				PRODUCT_NAME = "Stableford Calculator";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
